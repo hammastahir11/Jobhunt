@@ -90,7 +90,6 @@ label.logo{
 
 /*  */
 
-
 .navi .profile{
     
     padding-top: 15px;
@@ -103,6 +102,9 @@ label.logo{
    
     list-style: none;
 }
+
+
+
 
 .navi .profile .nr_li{
     z-index: 99;
