@@ -1,0 +1,174 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    
+}
+
+
+
+.indicator {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 23px;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: #ef172c;
+    animation: .9s infinite beatHeart;
+    transform-origin: center
+}
+
+
+@keyframes beatHeart {
+    0% {
+        transform: scale(0.9)
+    }
+
+    25% {
+        transform: scale(1.1)
+    }
+
+    40% {
+        transform: scale(0.9)
+    }
+
+    60% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(0.9)
+    }
+}
+
+body{
+    overflow-x: hidden;
+}
+.workSearch{
+    
+   
+    
+    background-color:#ffffff;
+    color:#000000;
+    border-color: #89BA16;
+    
+    width: fit-content;
+    padding: 1% 3% 1% 3%;
+
+}
+
+.CategoryJobOpen{
+    color: #000000;
+    text-decoration: none;
+    
+    
+
+}
+
+.CategoryJobOpen:hover{
+    background-color: #89BA16;
+    color: #FFFFFF;
+   
+}
+
+
+.JobListItem{
+    border: 1px solid #CCCCCC;
+    font-family: 'Calibri', Courier, monospace,Calibri;
+    
+}
+
+.LatestJobBlock{
+    border: 1px solid #89BA16;
+    font-family: 'Calibri', Courier, monospace,Calibri;
+}
+
+
+
+
+.btnset{
+    background-color:#89BA16;
+    color:#FFFFFF;
+    border-color: #FFFFFF;
+    
+    width: fit-content;
+    padding: 1% 3% 1% 3%;
+    
+}
+/*Circular Image with different width and height*/
+.circular_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color:#89BA16;
+   
+    border-color: #CCCCCC;
+    
+    display:inline-block;
+    vertical-align:middle;
+
+
+ 
+  }
+
+.profileimgicon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color:#89BA16;
+   
+    border-color: #CCCCCC;
+    
+    display:inline-block;
+    vertical-align:middle;
+
+}
+
+
+/*End Circular Image*/
+
+.btnset::placeholder{
+    color:#FFFFFF;
+    padding: 0%;
+}
+.bgcolor{
+    background-color: #89BA16;
+    opacity: 90%;
+}
+
+.pcolor{
+    color: #000000;
+    font-weight: bold;
+}
+.bgcolorwhite{
+    background-color: #FFFFFF;
+}
+.bcolor{
+    color: #ffffff;
+    text-shadow: #89BA16;
+}
+
+.parrotColor{
+    color: #89BA16;
+}
+.hcolor{
+    color: #000000 ;
+}
+.hscolor{
+    color: #444444;
+}
+.bgtcolor{
+    color: #000000;
+}
+
+/*Scrollbar*/
+/* width */
+.ScrollingJobs{
+    height: 710px;
+    overflow-y: scroll;
+}
+/*End Scroolbar*/
