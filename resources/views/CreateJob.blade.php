@@ -17,7 +17,7 @@
     <title>Job Create</title>
 </head>
 <body class="bgcolorp">
-    <div class="container text-center py-3 text-light">
+    <div class="container text-center py-3 text-dark">
         <h3>Find a Great Hire, Fast</h3>
         <p>Rated #1 in delivering quality hires</p>
         <div class="d-flex justify-content-center  p-3  " >
@@ -46,7 +46,7 @@
                 </select>
 
                 <label for="description" class="py-2">Description</label><br>
-                <textarea name="edit"  id="description" class="w-100"></textarea>
+                <textarea name="content"  id="description" class="w-100"></textarea>
 
                 <button class="rounded border w-100 py-2 my-2 btn-primary">Post</button>
 
@@ -69,8 +69,10 @@
     <script src="ckeditor_4.19.0_standard/ckeditor/ckeditor.js"></script>
     <script>
         //Editor for a discription in the job
-        CKEDITOR.replace('edit');
+
+        CKEDITOR.replace('content');
     </script>
+
 </body>
 </html>
 @endsection
