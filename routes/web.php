@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get(('login'), function () {
     return view('login');
@@ -25,9 +25,7 @@ Route::get(('createprofile'), function () {
 Route::get(('userprofile'), function () {
     return view('userprofile');
 });
-Route::get(('home'), function () {
-    return view('index');
-});
+
 Route::get(('menu'), function () {
     return view('Layouts.layout');
 });
