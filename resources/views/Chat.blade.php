@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-@extends('Layouts.layout')
-@section('content')
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,10 +24,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>CHAT</title>
 </head>
-
+@extends('Layouts.layoutwithoutfooter')
+@section('content')
 <body>
     <div class="container">
-        <div class="row no-gutters">
+        <div class="row w-100 no-gutters">
             <div class="col-md-4 border-right">
 
 
