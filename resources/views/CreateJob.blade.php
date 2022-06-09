@@ -50,7 +50,10 @@
                 </select>
 
                 <label for="description" class="py-2">Description</label><br>
-                <textarea class="text-dark" name="editor"  id="editor" rows="10" class="w-100"></textarea>
+                <div class="text-dark">
+                    <textarea  name="editor"  id="editor" rows="10" class="w-100"></textarea>
+
+                </div>
 
                 <button class="rounded border w-100 py-2 my-2 btn-primary">Post</button>
 
