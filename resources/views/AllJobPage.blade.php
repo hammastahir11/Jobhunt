@@ -26,9 +26,9 @@
     
      
         <!-- Jobs list -->
-        <div class="col-5 my-2 rounded border ">
-          <h6 style="color: #89ba16">Recently Added Jobs</h6>
-          <h6><a class="anchorTag" style="color: black;" href="index.html">Home Page</a></h6>
+        <div class="col-5 my-2 shadow-lg rounded border ">
+          <h6 style="color: #89ba16;">Recently Added Jobs</h6>
+          {{-- <h6><a class="anchorTag" style="color: black;" href="index.html">Home Page</a></h6> --}}
   
           <!--Left Side List of Jobs-->
   
@@ -38,7 +38,7 @@
               <div class="col-6 p-2 w-100 JobListItem bg-white rounded my-3">
                 <div class="row">
                   <div class="col">
-                    <h7 style="color: #89ba16" >Part Time</h7>
+                    <h6 style="color: #89ba16" >Part Time</h6>
                     <h2>Frontend Developer</h2>
                     <span>Facebook.Inc</span>
                   </div>
@@ -61,7 +61,7 @@
 
         <!-- instructions -->
   
-        <div class="col-6 rounded border my-2">
+        <div class="col-6 shadow-lg rounded border my-2">
           <div class="position-static">
             <h6 style="color: #89ba16" >Job Description</h6>
             <h2>Post Of Job</h2>
