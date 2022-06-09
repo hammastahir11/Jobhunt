@@ -15,7 +15,8 @@
 </head>
 
 <body>
-    <div class="full-page">
+<span class="main_bg"></span>
+    <div class="full-page ">
         <div id='login-form' class='login-page d-flex justify-content-center'>
             <div class="form-box">
                 <div class='button-box'>
@@ -24,7 +25,7 @@
                     <button type='button' onclick='register()' class='toggle-btn'>Register</button>
                 </div>
                 <form id='login' name="form1" class='input-group-login'>
-                    <input type='text' class='input-field' placeholder='UserName' required>
+                    <input type='text' class='input-field' placeholder='Email/UserName' required>
                     <input type='password' name="text1" class='input-field' placeholder='Enter Password' required>
                     <input type='checkbox' class='check-box'><span>Remember Password</span>
                     <button type='submit'onclick="CheckPassword(document.form1.text1)" class='submit-btn'> Log in </button>
