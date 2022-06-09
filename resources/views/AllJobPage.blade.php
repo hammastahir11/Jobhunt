@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-@extends('Layouts.layout')
-@section('content')
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,6 +16,8 @@
     <title>Job List</title>
   </head>
   <body>
+  @extends('Layouts.layout')
+@section('content')
     
     <!-- Copy of Linked In -->
     <!-- All jobs -->
@@ -78,7 +79,7 @@
 
 
 
-
+    @endsection
     <!-- bootstrap link -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -91,4 +92,3 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </body>
 </html>
-@endsection
