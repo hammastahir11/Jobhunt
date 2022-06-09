@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{URL::asset('public/css/CreateJob/CreateJob.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/CreateJob/CreateJob.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -46,7 +46,7 @@
                 </select>
 
                 <label for="description" class="py-2">Description</label><br>
-                <textarea name="content"  id="description" class="w-100"></textarea>
+                <textarea name="edit"  id="description" class="w-100"></textarea>
 
                 <button class="rounded border w-100 py-2 my-2 btn-primary">Post</button>
 
@@ -69,7 +69,7 @@
     <script src="ckeditor_4.19.0_standard/ckeditor/ckeditor.js"></script>
     <script>
         //Editor for a discription in the job
-        CKEDITOR.replace('content');
+        CKEDITOR.replace('edit');
     </script>
 </body>
 </html>
