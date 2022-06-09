@@ -20,11 +20,11 @@
 
     <div class="container">
         <div class="row w-100  rounded">
-            <div class="col-5 p-5 bgcolorp justify-content-center text-center outleftcontainerunder">
+            <div class="col-5 shadow-lg  p-5 bgcolorp justify-content-center text-center outleftcontainerunder">
                 <img src="css/JobApply/hiring img.png" class="w-100" alt="hiring img">
-                <button class="btn-warning rounded btn text-light " ><a class="anchorTag" href="AllJobPage.html">Click Here</a></button>
+                <button class="btn-warning rounded shadow btn text-light " ><a class="anchorTag" href="AllJobPage.html">Click Here</a></button>
             </div>
-            <div class=" col-7 py-5 text-center align-content-center justify-content-center">
+            <div class="shadow-lg  col-7 py-5 text-center align-content-center justify-content-center">
                 <h4>Personal Info</h4>
                 <input type="text" placeholder="Full Name" class="w-50 border p-1 m-3 rounded">
                 <input type="text" placeholder="Email" class="w-50 border p-1 m-3 rounded">
