@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+@extends('Layouts.layout')
+@section('content')
 <html lang="en">
 
 <head>
@@ -72,3 +74,4 @@
 </body>
 
 </html>
+@endsection

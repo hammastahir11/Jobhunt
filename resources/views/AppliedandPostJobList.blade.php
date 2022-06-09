@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+@extends('Layouts.layout')
+@section('content')
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -144,7 +146,7 @@
         <div class="row rounded">
             
 
-            <div class="col-5 bgcolorp ScrollingJobs justify-content-center text-center outleftcontainerunder">
+            <div class="col-5  bgcolorp ScrollingJobs justify-content-center text-center outleftcontainerunder">
                
 
                 
@@ -202,7 +204,7 @@
 
 
 
-            <div class="offset-6 col-7 py-5  ">
+            <div class="  col-7 py-5  ">
                 
 
                 <div >
@@ -290,7 +292,7 @@
 
 
 
-            <div class="offset-6 col-7 py-5  ">
+            <div class=" col-7 py-5  ">
                 
 
                 <div >
@@ -329,3 +331,4 @@
 
 </body>
 </html>
+@endsection

@@ -6,7 +6,7 @@
 .outleftcontainerunder /*I want this div to be in position fixed and height as 100% of the screen. But when I do it, there is a chaos*/
 {
   
-  position: fixed;
+  /* position: absolute; */
   height: 100%;
  }
 .anchorTag{
