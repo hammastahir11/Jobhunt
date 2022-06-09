@@ -21,7 +21,7 @@
     <!-- Copy of Linked In -->
     <!-- All jobs -->
     <div class="container">
-      <div class="row justify-content-around">
+      <div class="row w-100 justify-content-around">
     
      
         <!-- Jobs list -->
