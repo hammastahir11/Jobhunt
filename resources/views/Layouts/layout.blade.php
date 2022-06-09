@@ -22,7 +22,7 @@
     });  
     
   </script>
-  <title>Document</title>
+  <title>Job Hunt</title>
 </head>
 <body class="antialiased">
 <header>
@@ -85,6 +85,7 @@
 
     </nav>
   </header>
+  @yield('content')
   <script>
 	var dd_main = document.querySelector(".dd_main");
 	dd_main.addEventListener("click", function(){
@@ -97,6 +98,6 @@
   
 
 
-  @yield('content')
+  
 </body>
 </html>
