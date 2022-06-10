@@ -24,8 +24,16 @@
 </head>
 <body class="antialiased">
 <header>
-    <nav class="navi">
-      <label class="logo">JOB HUNT</label>
+<nav class="navi">
+      <label >
+        <a class="logo" style="decoration: none; 
+                              font-size: 30px;
+                              font-weight: bold;
+                              color: white;
+                              padding: 0 20px;
+                              line-height: 70px;"
+     href="home">JOB HUNT</a>
+      </label>
 
 
       <ul class="profile" >
@@ -43,34 +51,30 @@
                     </div>
                     <div class="dd_right">
                       <ul>
-                        <li>Settings</li>
-                        <li>Downloads</li>
+                        <li>Edit Profile</li>
+                        <li>View Profile</li>
+                        <li>Jobs</li>
+                        <li>Create Jobs</li>
                         <li>Logout</li>
                       </ul>
                     </div>
                   </div>
-                <!-- </li>
-                <li class="nr_li">
-                  <i class="fas fa-envelope-open-text"></i>
-                </li> -->
           </ul>
       <ul class="ull">
         <li class="lii">
-          <a class="active" href="#">Home</a>
+          <a class="active" href="allJobs">All Jobs</a>
         </li>
         <li class="lii">
-          <a href="#">About</a>
+          <a href="chat">chat</a>
         </li>
         <li class="lii">
-          <a href="#">contact us</a>
-        </li>      
-      </ul>
+          <a href="login">Sign In</a>
+        </li> 
+      </ul>     
       <label class="label" id="icon">
         <i class="fa fa-bars"></i> 
       </label>
-      
-      <!-- Profile Menu -->
-      
+
     </nav>
   </header>
   @yield('content')
