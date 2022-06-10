@@ -29,7 +29,7 @@ a.logo:hover{
     line-height: 70px;
 }
 
-.navi a{
+.navi .menuheader{
     color: rgb(210, 211, 45);
     font-size: 18px;
     text-transform: uppercase;
@@ -119,6 +119,7 @@ a.logo:hover{
     box-shadow: inset 0 0 0 0 #54b3d6;
     color: #54b3d6;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  
 }
 .navi .profile .dd_right ul li:hover {
     box-shadow: inset 100px 0 0 0 #54b3d6;
@@ -166,11 +167,16 @@ a.logo:hover{
 
 .navi .dd_menu li{
 	margin-bottom: 10px;
-	color: #868686;
 }
-
 .navi .dd_right li{
     width: 100px;
+} 
+.drop{
+    color: #54b3d6;
+    text-decoration: none;
+    width: 100px;
+    overflow-wrap: none;
+    font-size: 18px;
 }
 
 .navi .dd_menu:before{

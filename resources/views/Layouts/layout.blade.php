@@ -48,7 +48,7 @@
 <header>
     <nav class="navi">
       <label >
-        <a class="logo" style="decoration: none; 
+        <a class="logo" style="text-decoration: none; 
                               font-size: 30px;
                               font-weight: bold;
                               color: white;
@@ -66,31 +66,41 @@
                     
                     <div class="dd_left">
                       <ul>
-                        <li><i class="fas fa-cog"></i></li>
+                        <li><i  class="fas fa-cog"></i></li>
                         <li><i class="fas fa-download"></i></li>
                         <li><i class="fas fa-sign-out-alt"></i></li>
                       </ul>
                     </div>
                     <div class="dd_right">
                       <ul>
-                      <li>Edit Profile</li>
-                        <li>View Profile</li>
-                        <li>Jobs</li>
-                        <li>Create Jobs</li>
-                        <li>Logout</li>
+                      <li>
+                      <a class="drop" href="editprofile" >Edit Profile</a>
+                      </li>
+                      <li>
+                      <a class="drop" href="userprofile" >View Profile</a>
+                      </li>
+                      <li>
+                      <a class="drop" href="JobsDetails" >Jobs</a>
+                      </li>
+                      <li>
+                      <a class="drop" href="CreateJob" >Create Jobs</a>
+                      </li>
+                      <li>
+                      <a class="drop" href="#" >Logout</a>
+                      </li>
                       </ul>
                     </div>
                   </div>
           </ul>
       <ul class="ull">
         <li class="lii">
-          <a class="active" href="allJobs">All Jobs</a>
+          <a class="menuheader" href="allJobs">All Jobs</a>
         </li>
         <li class="lii">
-          <a href="chat">chat</a>
+          <a class="menuheader"href="chat">chat</a>
         </li>
         <li class="lii">
-          <a href="login">Sign In</a>
+          <a class="menuheader" href="login">Sign In</a>
         </li> 
       </ul>     
       <label class="label" id="icon">
