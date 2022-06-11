@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', function () {
+    return view('index');
+});
 Route::get('/home', function () {
     return view('index');
 });
@@ -49,3 +52,13 @@ Route::get(('editprofile'), function () {
 Route::get(('menu'), function () {
     return view('Layouts.layout');
 });
+
+
+
+
+
+
+
+//////////////
+Route::post('/register','App\Http\Controllers\RegisterUser@store');
+Route::post('/login','App\Http\Controllers\RegisterUser@LoginUser');

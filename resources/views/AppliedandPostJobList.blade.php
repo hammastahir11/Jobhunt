@@ -82,8 +82,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias beatae aperiam, fugiat cupiditate, ea tempora qui, fuga tempore distinctio iusto nobis modi? Expedita voluptas repudiandae velit? Modi, repellat iusto.</p>
         
                 </div>  
-
-
             </div>
         </div>
     </div>

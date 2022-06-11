@@ -60,7 +60,7 @@
 
       <ul class="profile" >
                 <li class="nr_li dd_main">
-                  <img onclick="" src="css/layout/profile.jpeg" alt="profile_img">
+                  <img onclick="" id="" src="css/layout/profile.jpeg" alt="profile_img">
                   
                   <div class="dd_menu"  >
                     

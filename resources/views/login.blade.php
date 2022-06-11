@@ -24,19 +24,21 @@
                     <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
                     <button type='button' onclick='register()' class='toggle-btn'>Register</button>
                 </div>
-                <form id='login' name="form1" class='input-group-login'>
-                    <input type='text' class='input-field' placeholder='Email/UserName' required>
-                    <input type='password' name="text1" class='input-field' placeholder='Enter Password' required>
+                <form id='login' action="/login"    method="POST" name="form1" class='input-group-login'>
+                    @csrf
+                    <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' required>
+                    <input type='text' name="password"  class='input-field' placeholder='Enter Password' required>
                     <input type='checkbox' class='check-box'><span>Remember Password</span>
                     <button type='submit'onclick="CheckPassword(document.form1.text1)" class='submit-btn'> Log in </button>
                 </form>
-                <form id='register' class='input-group-register'>
-                    <input type='text' class='input-field' placeholder='First Name' required>
-                    <input type='text' class='input-field' placeholder='Last Name ' required>
-                    <input type='email' class='input-field' placeholder='Email Id' required>
-                    <input type='password' name="text1" class='input-field' placeholder='Enter Password' required>
-                    <input type='password' name="text1"  class='input-field' placeholder='Confirm Password' required>
-                    <input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
+                <form id='register' action="/register"    method="POST" class='input-group-register'>
+                    @csrf
+                    <input type='text' class='input-field' name='fName' placeholder='First Name' required>
+                    <input type='text' class='input-field' name='lName' placeholder='Last Name ' required>
+                    <input type='email' class='input-field' name='emailId' placeholder='Email Id' required>
+                    <input type='text'  name='password' class='input-field' placeholder='Enter Password' required>
+                    <input type='password' name="text1" name='confirmPassword' class='input-field' placeholder='Confirm Password' required>
+                    <input type='checkbox' class='check-box' name='checkBox'><span>I agree to the terms and conditions</span>
                     <button type='submit' onclick="CheckPassword(document.form1.text1)" class='submit-btn'>Register</button>
                 </form>
             </div>
@@ -58,17 +60,17 @@
         }
 
 
-        function CheckPassword(inputtxt) {
-            var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-            if (inputtxt.value.match(decimal)) {
-                alert('Correct Password')
-                return true;
-            }
-            else {
-                alert('Wrong Password')
-                return false;
-            }
-        }
+        // function CheckPassword(inputtxt) {
+        //     var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+        //     if (inputtxt.value.match(decimal)) {
+        //         alert('Correct Password')
+        //         return true;
+        //     }
+        //     else {
+        //         alert('Wrong Password')
+        //         return false;
+        //     }
+        // }
 
     </script>
     <!-- <script>
