@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Models\user_profile;
+use Session;
 
 
 class RegisterUser extends Controller
@@ -22,5 +23,28 @@ class RegisterUser extends Controller
         return redirect('/home');
     }
 
+    public function LoginUser(){
+        Session::pull('userId');
+        $id=Request::input('emailId');
+        $data=user_profile::where('userId',$id)->get();
+        if(count($data)>0){
+            Session::put('userId',$id);
+            
+        }
+        return  Session::get('userId');
+        
+        
+
+
+    }
+
     
 }
+
+
+//user_profile::where('userId',$id)->get();
+//user_profile::where('userId',$id)->get()->first();
+//user_profile::find($id);
+//user_profile::all();
+
+

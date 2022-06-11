@@ -9,4 +9,5 @@ class user_profile extends Model
 {
     use HasFactory;
     public $timestamps=false;
+    protected $primarykey = 'userId';
 }
