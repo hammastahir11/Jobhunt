@@ -57,10 +57,10 @@
      href="home">JOB HUNT</a>
       </label>
 
-
+      
       <ul class="profile" >
                 <li class="nr_li dd_main">
-                  <img onclick="" id="" src="css/layout/profile.jpeg" alt="profile_img">
+                  <img src="css/layout/profile.jpeg" alt="profile_img">
                   
                   <div class="dd_menu"  >
                     

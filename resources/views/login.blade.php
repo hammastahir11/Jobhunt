@@ -24,21 +24,22 @@
                     <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
                     <button type='button' onclick='register()' class='toggle-btn'>Register</button>
                 </div>
-                <form id='login' action="/login"    method="POST" name="form1" class='input-group-login'>
+                <form id='login' action="/login" enctype="multipart/form-data"    method="POST" name="form1" class='input-group-login'>
                     @csrf
                     <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' required>
                     <input type='text' name="password"  class='input-field' placeholder='Enter Password' required>
                     <input type='checkbox' class='check-box'><span>Remember Password</span>
                     <button type='submit'onclick="CheckPassword(document.form1.text1)" class='submit-btn'> Log in </button>
                 </form>
-                <form id='register' action="/register"    method="POST" class='input-group-register'>
+                <form id='register' action="/register" enctype="multipart/form-data"   method="POST" class='input-group-register'>
                     @csrf
                     <input type='text' class='input-field' name='fName' placeholder='First Name' required>
                     <input type='text' class='input-field' name='lName' placeholder='Last Name ' required>
-                    <input type='email' class='input-field' name='emailId' placeholder='Email Id' required>
+                    <input type='email' class=' input-field' name='emailId' placeholder='Email Id' required>
+                    <label for="pic"  class='input-field'>Upload Profile Image</label>
+                    <input type='file' class='input-field' name='pic' placeholder='Upload Profile Image' required>
                     <input type='text'  name='password' class='input-field' placeholder='Enter Password' required>
                     <input type='password' name="text1" name='confirmPassword' class='input-field' placeholder='Confirm Password' required>
-                    <input type='checkbox' class='check-box' name='checkBox'><span>I agree to the terms and conditions</span>
                     <button type='submit' onclick="CheckPassword(document.form1.text1)" class='submit-btn'>Register</button>
                 </form>
             </div>

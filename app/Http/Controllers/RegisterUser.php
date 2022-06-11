@@ -7,6 +7,7 @@ use App\Models\user_profile;
 use Session;
 
 
+
 class RegisterUser extends Controller
 {
 
@@ -17,10 +18,26 @@ class RegisterUser extends Controller
         $user->fName=Request::input('fName');
         $user->lName=Request::input('lName');
         $user->emailId=Request::input('emailId');
+
+//Image Upload
+
+        $pic = Request::file('pic');
+        error_log($pic);
+        if($pic!==NULL){
+
+            $picName = $pic->getClientOriginalName();
+        
+            $picType = $pic->getClientOriginalExtension();
+    
+            $picSize = $pic->getSize();
+            $pic->move('uploads',$picName);
+            $destination = 'uploads/'.$picName;
+            $user->pic=$destination;
+        }
         $user->password= (Request::input('password'));
         $user->save();
 
-        return redirect('/home');
+        return redirect('/login');
     }
 
     public function LoginUser(){
@@ -31,7 +48,13 @@ class RegisterUser extends Controller
             Session::put('userId',$id);
             
         }
-        return  Session::get('userId');
+        $data=user_profile::where('userId',$id)->get()->first();
+
+
+        view('Layouts.layout',['userData'=>$data]);
+        
+        // return  Session::get('userId');
+         return view('index');
         
         
 
