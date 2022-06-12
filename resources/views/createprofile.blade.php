@@ -15,7 +15,7 @@
 
 <body>
     <span class="main_bg"></span>
-    <form id="multistepsform">
+    <form id="multistepsform" action="userprofile" method="post">
         <!-- progressbar -->
         <ul id="progressbar">
             
@@ -31,7 +31,7 @@
             <h3 class="fs-subtitle"></h3>
             <input type="text" name="fname" placeholder="First Name" />
             <input type="text" name="lname" placeholder="Last Name" />
-            <input type="text" name="Field" placeholder="Field" />
+            <input type="text" name="field" placeholder="Field" />
             <input type="text" onfocus="(this.type='date')" name="dob" placeholder="Date Of Birth" />
             <input type="text" name="city" placeholder="City" />
             <input type="text" name="country" placeholder="Country" />
@@ -54,9 +54,9 @@
             <h3 class="fs-subtitle">Experience</h3>
             <div class="input_fields_wrap">
                 <h3 class="fs-subtitle"></h3>
-                <div><input type="text" name="mytext[]" placeholder="Job Name" /></div>
-                <div><input type="text" name="mytext[]" placeholder="Company Name" /></div>
-                <div><textarea name="mytext[]" placeholder="Address"></textarea></div>
+                <div><input type="text" name="jname" placeholder="Job Name" /></div>
+                <div><input type="text" name="cname" placeholder="Company Name" /></div>
+                <div><textarea name="caddress" placeholder="Address"></textarea></div>
             </div>
             <br>
             <!-- <button class="add_field_button">Add More Experience</button>  -->

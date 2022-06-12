@@ -62,3 +62,4 @@ Route::get(('menu'), function () {
 //////////////
 Route::post('/register','App\Http\Controllers\RegisterUser@store');
 Route::post('/login','App\Http\Controllers\RegisterUser@LoginUser');
+Route::post('/editprofile','App\Http\Controllers\RegisterUser@createProfile');
