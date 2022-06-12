@@ -13,16 +13,16 @@ class RegisterUser extends Controller
 {
 
    public function createProfile(){
-        $userinfo = new userinfo();
-        $userinfo->profession = Request::input('field');
-        $userinfo->dateOfBirth = Request::input('dob');
-        $userinfo->city = Request::input('city');
-        $userinfo->country = Request::input('country');
-        $userinfo->phoneNumber = Request::input('phone');
-        $userinfo->portfolioSite = Request::input('website');
-        $userinfo->Address = Request::input('address');
-        $userinfo->save();
-        return redirect('/userprofile');
+        $user_info = new userinfo();
+        $user_info->profession = Request::input('field');
+        $user_info->dateOfBirth = Request::input('dob');
+        $user_info->city = Request::input('city');
+        $user_info->country = Request::input('country');
+        $user_info->phoneNumber = Request::input('phone');
+        $user_info->portfolioSite = Request::input('website');
+        $user_info->Address = Request::input('address');
+        $user_info->save();
+        return redirect('editprofile');
    }
 
     //Register a new User on Job Hunt

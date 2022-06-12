@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@extends('Layouts.layout')
+@extends('Layouts.layoutwithoutfooter')
 @section('content')
 <html lang="en">
 
@@ -15,7 +15,7 @@
 
 <body>
     <span class="main_bg"></span>
-    <form id="multistepsform" action="userprofile" method="post">
+    <form id="multistepsform" action="/editprofile" method="POST">
         <!-- progressbar -->
         <ul id="progressbar">
             

@@ -46,7 +46,7 @@ Route::get('/userprofile', function () {
 Route::get(('login'), function () {
     return view('login');
 });
-Route::get(('editprofile'), function () {
+Route::get(('/editprofile'), function () {
     return view('createprofile');
 });
 
