@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterUser;
+use App\Http\Controllers\createJobs;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +24,9 @@ Route::get('/home', function () {
 Route::get('/candidates', function () {
     return view('CandidatePage');
 });
-Route::get('/allJobs', function () {
-    return view('AllJobPage');
-});
+// Route::get('/allJobs', function () {
+//     return view('AllJobPage');
+// });
 Route::get('/JobsDetails', function () {
     return view('AppliedandPostJobList');
 });
@@ -63,3 +65,11 @@ Route::get(('menu'), function () {
 Route::post('/register','App\Http\Controllers\RegisterUser@store');
 Route::post('/login','App\Http\Controllers\RegisterUser@LoginUser');
 Route::post('/editprofile','App\Http\Controllers\RegisterUser@createProfile');
+
+
+
+
+//////////////////////////////////////////
+Route::post('/CreateJob','App\Http\Controllers\createJobs@store');
+
+Route::get('/allJobs','App\Http\Controllers\createJobs@AllJobs');

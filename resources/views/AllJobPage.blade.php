@@ -35,12 +35,13 @@
           <div class="row text-start">
             <div class="col-12 p-2 ScrollingJobs my-2 bgcolorp" id="kashif">
 
+              @foreach ($jobs as $job)
               <div class="col-6 p-2 w-100 JobListItem bg-white rounded my-3">
                 <div class="row">
                   <div class="col">
-                    <h6 style="color: #89ba16" >Part Time</h6>
-                    <h2>Frontend Developer</h2>
-                    <span>Facebook.Inc</span>
+                    <h6 style="color: #89ba16" >{{$job->EmploymentType}}</h6>
+                    <h4><b>{{$job->Title}}</b></h4>
+                    <span><b>Company:</b> {{$job->CompanyName}}</span>
                   </div>
                   <div
                     class="col align-items-center text-end d-flex align-items-center justify-content-md-end"
@@ -48,8 +49,10 @@
                     <button type="button" class="btn btn-primary"><a class="anchorTag" href="JobApply.html">Apply</a></button>
                   </div>
                 </div>
+                
               </div>
-
+              @endforeach
+              
   
             </div>
           </div>
