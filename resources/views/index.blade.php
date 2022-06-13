@@ -163,33 +163,24 @@
 
       <div class="row text-start ">
         <div class="col-8 p-4 ScrollingJobs" id="kashif">
+          @foreach ($jobs as $job)
           <div class="col-8 p-3 w-100 JobListItem my-3">
             <div class="row">
               <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
+                <h6 style="color: #89ba16">{{$job->EmploymentType}}</h6>
+                <h2>{{$job->Title}}</h2>
+                <span><b>Company:</b> {{$job->CompanyName}}</span>
               </div>
               <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
+                <a href="jobdescription/{{ $job->postId }}" class="btn btn-primary">Detail</a>
+                {{-- <button type="button" class="btn btn-primary">Apply</button> --}}
               </div>
             </div>
           </div>
+          @endforeach
 
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-8 p-3 w-100 JobListItem my-3">
+          {{-- <div class="col-8 p-3 w-100 JobListItem my-3">
             <div class="row">
               <div class="col">
                 <h6 style="color: #89ba16">Part Time</h6>
@@ -200,137 +191,7 @@
                 <button type="button" class="btn btn-primary">Apply</button>
               </div>
             </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-8 p-3 w-100 JobListItem my-3">
-            <div class="row">
-              <div class="col">
-                <h6 style="color: #89ba16">Part Time</h6>
-                <h2>Frontend Developer</h2>
-                <span>Facebook.Inc</span>
-              </div>
-              <div class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                <button type="button" class="btn btn-primary">Apply</button>
-              </div>
-            </div>
-          </div>
+          </div> --}}
         </div>
 
         <!--Right side just some pics-->

@@ -55,10 +55,6 @@ class RegisterUser extends Controller
         
         // return  Session::get('userId');
          return view('index');
-        
-        
-
-
     }
 
     

@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterUser;
 use App\Http\Controllers\createJobs;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +16,11 @@ use App\Http\Controllers\createJobs;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/','App\Http\Controllers\createJobs@index');
 Route::get('/home', function () {
     return view('index');
 });
@@ -65,6 +68,9 @@ Route::get(('menu'), function () {
 Route::post('/register','App\Http\Controllers\RegisterUser@store');
 Route::post('/login','App\Http\Controllers\RegisterUser@LoginUser');
 
+//ApplyJob
+Route::post('/apply','App\Http\Controllers\apply@store');
+
 
 
 
@@ -72,3 +78,4 @@ Route::post('/login','App\Http\Controllers\RegisterUser@LoginUser');
 Route::post('/CreateJob','App\Http\Controllers\createJobs@store');
 
 Route::get('/allJobs','App\Http\Controllers\createJobs@AllJobs');
+Route::get('/jobdescription/{id}','App\Http\Controllers\createJobs@jobDescription');

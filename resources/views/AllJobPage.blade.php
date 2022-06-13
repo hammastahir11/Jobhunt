@@ -46,7 +46,8 @@
                   <div
                     class="col align-items-center text-end d-flex align-items-center justify-content-md-end"
                   >
-                    <button type="button" class="btn btn-primary"><a class="anchorTag" href="JobApply.html">Apply</a></button>
+                  <a href="jobdescription/{{ $job->postId }}" class="btn btn-primary">Detail</a>
+                    {{-- <button type="button" class="btn btn-primary"><a class="anchorTag" href="JobApply.html">Apply</a></button> --}}
                   </div>
                 </div>
                 
@@ -67,12 +68,16 @@
         <div class="col-6 shadow-lg rounded border my-2">
           <div class="position-static">
             <h6 style="color: #89ba16" >Job Description</h6>
-            <h2>Post Of Job</h2>
-            <i class="bi bi-bag-fill h6">  (Internship,fullTime,Remote)</i><br>
-            <i class="bi bi-building h6">Address</i>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias beatae aperiam, fugiat cupiditate, ea tempora qui, fuga tempore distinctio iusto nobis modi? Expedita voluptas repudiandae velit? Modi, repellat iusto.</p>
-
+            <h2> {{$jobDes->Title}}</h2>
+            <i class="bi bi-bag-fill h6"> {{$jobDes->WorkPlace}}</i><br>
+            <i class="bi bi-building h6">{{$jobDes->JobLocation}}</i>
+            <br>
+            
+            <div><div>{!!$jobDes->JobDescription!!}</div></div>
+            <a href="/jobapply" class="btn btn-primary">apply</a>
+                  
+            
+            
           </div>  
         </div>
       </div>

@@ -32,7 +32,7 @@
                               color: white;
                               padding: 0 20px;
                               line-height: 70px;"
-     href="home">JOB HUNT</a>
+     href="/">JOB HUNT</a>
       </label>
 
 

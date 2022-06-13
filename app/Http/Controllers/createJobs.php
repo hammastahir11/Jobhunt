@@ -27,13 +27,35 @@ class createJobs extends Controller
 
 
         $jobData=postjob::all();
-
-        return view('AllJobPage', ['jobs' => $jobData]);
+        $data=postjob::all()->first();
+        
+        Session::pull('postId');
+        Session::put('postId',$data->postId);
+        return view('AllJobPage', ['jobs' => $jobData,'jobDes'=>$data]);
         
     }
 
     public function AllJobs(){
         $jobData=postjob::all();
-        return view('AllJobPage', ['jobs' => $jobData]);
+        $data=postjob::all()->first();
+        
+        Session::pull('postId');
+        Session::put('postId',$data->postId);
+        return view('AllJobPage', ['jobs' => $jobData,'jobDes'=>$data]);
     }
+
+    public function jobDescription($id) {
+        $data=postjob::where('postId',$id)->first();
+        $jobData=postjob::all();
+        Session::pull('postId');
+        Session::put('postId',$id);
+        return view('AllJobPage', ['jobs' => $jobData,'jobDes'=>$data]);
+        }
+
+    public function index(){
+        $jobData=postjob::all();
+        
+        return view('index', ['jobs' => $jobData]);
+    }
+        
 }
