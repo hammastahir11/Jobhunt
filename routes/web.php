@@ -49,7 +49,7 @@ Route::get('/userprofile', function () {
 Route::get(('login'), function () {
     return view('login');
 });
-Route::get(('editprofile'), function () {
+Route::get(('/editprofile'), function () {
     return view('createprofile');
 });
 
@@ -67,6 +67,7 @@ Route::get(('menu'), function () {
 //////////////
 Route::post('/register','App\Http\Controllers\RegisterUser@store');
 Route::post('/login','App\Http\Controllers\RegisterUser@LoginUser');
+Route::post('/editprofile','App\Http\Controllers\RegisterUser@createProfile');
 
 //ApplyJob
 Route::post('/apply','App\Http\Controllers\apply@store');
@@ -78,4 +79,5 @@ Route::post('/apply','App\Http\Controllers\apply@store');
 Route::post('/CreateJob','App\Http\Controllers\createJobs@store');
 
 Route::get('/allJobs','App\Http\Controllers\createJobs@AllJobs');
+
 Route::get('/jobdescription/{id}','App\Http\Controllers\createJobs@jobDescription');

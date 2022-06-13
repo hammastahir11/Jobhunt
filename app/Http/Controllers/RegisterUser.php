@@ -4,12 +4,26 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Models\user_profile;
+use App\Models\userinfo;
 use Session;
 
 
 
 class RegisterUser extends Controller
 {
+
+   public function createProfile(){
+        $user_info = new userinfo();
+        $user_info->profession = Request::input('field');
+        $user_info->dateOfBirth = Request::input('dob');
+        $user_info->city = Request::input('city');
+        $user_info->country = Request::input('country');
+        $user_info->phoneNumber = Request::input('phone');
+        $user_info->portfolioSite = Request::input('website');
+        $user_info->Address = Request::input('address');
+        $user_info->save();
+        return redirect('editprofile');
+   }
 
     //Register a new User on Job Hunt
     public function store(){

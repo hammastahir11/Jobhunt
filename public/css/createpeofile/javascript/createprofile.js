@@ -70,6 +70,8 @@ $(".submit").click(function () {
   return false;
 });
 
+
+
 // More Fields
 $(document).ready(function() {
 	var max_fields      = 10; //maximum input boxes allowed
@@ -81,7 +83,7 @@ $(document).ready(function() {
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
-			$(wrapper).append('<div> <h3 class="fs-subtitle">Experience</h3> <input type="text" name="mytext[]" placeholder="Job Name" /> <input type="text" name="mytext[]" placeholder="Company Name" /> <textarea name="mytext[]" placeholder="Address"/> <a href="#" class="remove_field">Remove</a> </div>'); //add input box
+			$(wrapper).append('<div> <h3 class="fs-subtitle">Experience</h3> <input type="text" name="jname" placeholder="Job Name" /> <input type="text" name="cname" placeholder="Company Name" /> <textarea name="caddress" placeholder="Address"/> <a href="#" class="remove_field">Remove</a> </div>'); //add input box
 		}
 	});
 	
