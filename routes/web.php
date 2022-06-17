@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterUser;
 use App\Http\Controllers\createJobs;
-
+use App\Http\Controllers\userControl;
 
 
 /*
@@ -21,6 +21,7 @@ use App\Http\Controllers\createJobs;
 // });
 
 Route::get('/','App\Http\Controllers\createJobs@index');
+
 Route::get('/home', function () {
     return view('index');
 });
@@ -80,4 +81,10 @@ Route::post('/CreateJob','App\Http\Controllers\createJobs@store');
 
 Route::get('/allJobs','App\Http\Controllers\createJobs@AllJobs');
 
-Route::get('/jobdescription/{id}','App\Http\Controllers\createJobs@jobDescription');
+Route::get('jobdescription/{id}','App\Http\Controllers\createJobs@jobDescription');
+
+
+
+
+//LOGOUT
+Route::get('/logout','App\Http\Controllers\userControl@logout');

@@ -74,8 +74,9 @@
             <br>
             
             <div><div>{!!$jobDes->JobDescription!!}</div></div>
+            @if(Session::get('userId')!=NULL)
             <a href="/jobapply" class="btn btn-primary">apply</a>
-                  
+            @endif      
             
             
           </div>  

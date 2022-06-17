@@ -24,11 +24,19 @@
                     <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
                     <button type='button' onclick='register()' class='toggle-btn'>Register</button>
                 </div>
+                
                 <form id='login' action="/login" enctype="multipart/form-data"    method="POST" name="form1" class='input-group-login'>
+                   @error($errors){
+
+                       <label for="error" style="color:yellow">$error</label>
+                   }
+                   @enderror
+                   
+                
                     @csrf
                     <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' required>
                     <input type='text' name="password"  class='input-field' placeholder='Enter Password' required>
-                    <input type='checkbox' class='check-box'><span>Remember Password</span>
+                    
                     <button type='submit'onclick="CheckPassword(document.form1.text1)" class='submit-btn'> Log in </button>
                 </form>
                 <form id='register' action="/register" enctype="multipart/form-data"   method="POST" class='input-group-register'>

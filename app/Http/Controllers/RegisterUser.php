@@ -58,7 +58,7 @@ class RegisterUser extends Controller
     public function LoginUser(){
         $emailId=Request::input('emailId');
         $data=user_profile::where('emailId',$emailId)->get()->first();
-        
+
         Session::pull('userId');
         if($data!=NULL){
 
@@ -72,7 +72,8 @@ class RegisterUser extends Controller
             }
 
             else{
-                return view('login');
+                $err='User Name or Password is Incorrect!';
+                return view('login',['error',$err]);
             }
             
         }
