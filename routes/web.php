@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterUser;
 use App\Http\Controllers\createJobs;
 use App\Http\Controllers\userControl;
+use App\Http\Controllers\homePage;
+
 
 
 /*
@@ -80,11 +82,19 @@ Route::post('/apply','App\Http\Controllers\apply@store');
 Route::post('/CreateJob','App\Http\Controllers\createJobs@store');
 
 Route::get('/allJobs','App\Http\Controllers\createJobs@AllJobs');
+Route::get('/ShowJobData','App\Http\Controllers\createJobs@ShowJobData');
 
-Route::get('jobdescription/{id}','App\Http\Controllers\createJobs@jobDescription');
+
+//Check discription of jobs on allJobPage
+Route::get('/jobdescription/{id}','App\Http\Controllers\createJobs@jobDescription');
+
+//Search by category on index page
+Route::get('/SoftwareDev/allJobs/{category}','App\Http\Controllers\homePage@CategoryJobs');
 
 
 
 
 //LOGOUT
 Route::get('/logout','App\Http\Controllers\userControl@logout');
+
+

@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\RegisterUser;
+use App\Http\Controllers\userControl;
+use Illuminate\Support\Facades\Redirect;
 
 //use Illuminate\Http\Request;
 use App\Models\postjob;
@@ -12,11 +15,16 @@ class createJobs extends Controller
     public function store(){
 
         $jobAdd = new postjob();
-        $jobAdd->userId=Session::get('userId');
+        $user=Session::get('userId');
+        $jobAdd->userId=$user->userId;
         $jobAdd->Title=Request::input('title');
         $jobAdd->CompanyName=Request::input('company');
+        
         $jobAdd->WorkPlace=Request::input('workPlace');
+        $jobAdd->Category=Request::input('Category');
+        
         $jobAdd->JobLocation=Request::input('address');
+
         $jobAdd->EmploymentType=Request::input('jobType');
         $jobAdd->JobDescription=Request::input('editor');
         $mytime = Carbon\Carbon::now();
@@ -38,7 +46,9 @@ class createJobs extends Controller
     public function AllJobs(){
         $jobData=postjob::all();
         $data=postjob::all()->first();
-        
+        if($data==NULL){
+            return view('AllJobPage', ['jobs' => $jobData,'jobDes'=>$data]);    
+        }
         Session::pull('postId');
         Session::put('postId',$data->postId);
         return view('AllJobPage', ['jobs' => $jobData,'jobDes'=>$data]);
@@ -51,6 +61,9 @@ class createJobs extends Controller
         Session::put('postId',$id);
         return view('AllJobPage', ['jobs' => $jobData,'jobDes'=>$data]);
         }
+
+       
+
 
     public function index(){
         $jobData=postjob::all();

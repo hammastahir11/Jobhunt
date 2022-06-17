@@ -101,7 +101,7 @@
     <div class="container">
 
       <div class="row  p-1 shadow">
-        <a href="#" class="CategoryJobOpen rounded col-lg-2">
+        <a href="/SoftwareDev/allJobs/{{'Graphic Designer'}}" class="CategoryJobOpen rounded col-lg-2">
           <div class="">
             <h4>Graphic Designer</h4>
             <i class="bi bi-palette fa-4x"></i>
@@ -109,7 +109,7 @@
           </div>
         </a>
 
-        <a href="#" class="CategoryJobOpen rounded col-lg-2">
+          <a href="/SoftwareDev/allJobs/{{'Training and Education'}}" class="CategoryJobOpen rounded col-lg-2">
           <div class="">
             <h4>Training and Education</h4>
             <i class="bi bi-book-half fa-4x"></i>
@@ -117,7 +117,7 @@
           </div>
         </a>
 
-        <a href="#" class="CategoryJobOpen rounded col-lg-2">
+    <a href="/SoftwareDev/allJobs/{{'Software Developer'}}" class="CategoryJobOpen rounded col-lg-2">
           <div class="">
             <h4>Website & Coder</h4>
             <i class="bi bi-journal-code fa-4x"></i>
@@ -125,7 +125,7 @@
           </div>
         </a>
 
-        <a href="#" class="CategoryJobOpen rounded col-lg-2">
+        <a href="/SoftwareDev/allJobs/{{'Account and Finance'}}" class="CategoryJobOpen rounded col-lg-2">
           <div class="">
             <h4>Account & Finance</h4>
             <i class="bi bi-calculator-fill fa-4x"></i>
@@ -133,7 +133,7 @@
           </div>
         </a>
 
-        <a href="#" class="CategoryJobOpen rounded col-lg-2">
+        <a href="/SoftwareDev/allJobs/{{'Food and Resturant'}}" class="CategoryJobOpen rounded col-lg-2">
           <div class="">
             <h4>Resturant & Food</h4>
             <i class="bi bi-egg-fried fa-4x"></i>
@@ -141,7 +141,7 @@
           </div>
         </a>
 
-        <a href="#" class="CategoryJobOpen rounded col-lg-2">
+        <a href="/SoftwareDev/allJobs/{{'Health and Hospital'}}" class="CategoryJobOpen rounded col-lg-2">
           <div class="">
             <h4>Health & Hospital</h4>
             <i class="bi bi-palette fa-4x"></i>

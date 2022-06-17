@@ -97,14 +97,14 @@
 
        <ul class="ull">
         <li class="lii">
-          <a class="menuheader" href="allJobs">All Jobs</a>
+          <a class="menuheader" href="/allJobs">All Jobs</a>
         </li>
         <li class="lii">
-          <a class="menuheader"href="chat">chat</a>
+          <a class="menuheader"href="/chat">chat</a>
         </li>
         @if(Session::get('userId')==NULL)
         <li class="lii">
-          <a class="menuheader" href="login">Sign In</a>
+          <a class="menuheader" href="/login">Sign In</a>
         </li> 
         @endif
       </ul>     
