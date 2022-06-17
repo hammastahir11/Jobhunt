@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Request;
 use App\Models\user_profile;
 use App\Models\userinfo;
+use App\Models\postjob;
 use Session;
 
 
@@ -55,20 +56,42 @@ class RegisterUser extends Controller
     }
 
     public function LoginUser(){
+        $emailId=Request::input('emailId');
+        $data=user_profile::where('emailId',$emailId)->get()->first();
+        
         Session::pull('userId');
-        $id=Request::input('emailId');
-        $data=user_profile::where('userId',$id)->get();
-        if(count($data)>0){
-            Session::put('userId',$id);
+        if($data!=NULL){
+
+            Session::put('userId',$data);
+            $password=Request::input('password');
+            if($password==$data->password){
+
+                view('Layouts.layout',['userData'=>$data]);
+                 $jobData=postjob::all();
+                 return view('index', ['jobs' => $jobData]);
+            }
+
+            else{
+                return view('login');
+            }
             
         }
-        $data=user_profile::where('userId',$id)->get()->first();
+        else{
+            
+        }
 
 
-        view('Layouts.layout',['userData'=>$data]);
-        
-        // return  Session::get('userId');
-         return view('index');
+       // return  Session::get('userId');
+    //    {
+    //     "userId": 5,
+    //     "fName": "KASHIF",
+    //     "lName": "SATTAR",
+    //     "emailId": "kashidevlab@gmail.com",
+    //     "password": "KAS",
+    //     "pic": null
+    //     }
+
+
     }
 
     

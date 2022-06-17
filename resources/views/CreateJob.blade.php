@@ -37,6 +37,16 @@
                             <option value="Hybrid">Hybrid</option>
                         </select>
 
+                        <label for="category" class="py-2">Category</label><br>
+                        <select name="Category" class="rounded border w-100 p-2" id="category">
+                            <option value="On site">Graphic Designer</option>
+                            <option value="Remote"> Software Developer</option>
+                            <option value="Hybrid">Account and Finance</option>
+                            <option value="Hybrid">Food and Resturant</option>
+                            <option value="Hybrid">Health and Hospital</option>
+                            <option value="Hybrid">Training and Education</option>
+                        </select>
+
                         <label for="location" class="py-2">Job Location</label><br>
                         <input type="text" name="address" class="rounded border w-100 p-2" placeholder="Address">
 
