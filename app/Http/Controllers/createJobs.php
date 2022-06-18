@@ -64,10 +64,9 @@ class createJobs extends Controller
 
        
 
-
+        //Later I will change this to the main home page
     public function index(){
         $jobData=postjob::all();
-        
         return view('index', ['jobs' => $jobData]);
     }
         

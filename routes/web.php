@@ -5,6 +5,7 @@ use App\Http\Controllers\RegisterUser;
 use App\Http\Controllers\createJobs;
 use App\Http\Controllers\userControl;
 use App\Http\Controllers\homePage;
+use App\Http\Controllers\specificUserJobData;
 
 
 
@@ -33,9 +34,9 @@ Route::get('/candidates', function () {
 // Route::get('/allJobs', function () {
 //     return view('AllJobPage');
 // });
-Route::get('/JobsDetails', function () {
-    return view('AppliedandPostJobList');
-});
+// Route::get('/JobsDetails', function () {
+//     return view('AppliedandPostJobList');
+// });
 Route::get('/chat', function () {
     return view('Chat');
 });
@@ -91,6 +92,9 @@ Route::get('/jobdescription/{id}','App\Http\Controllers\createJobs@jobDescriptio
 //Search by category on index page
 Route::get('/SoftwareDev/allJobs/{category}','App\Http\Controllers\homePage@CategoryJobs');
 
+
+//Search by category on index page
+Route::get('/JobsDetails','App\Http\Controllers\specificUserJobData@JobsDetails');
 
 
 

@@ -105,7 +105,7 @@
           <div class="">
             <h4>Graphic Designer</h4>
             <i class="bi bi-palette fa-4x"></i>
-            <p>123 Job Open</p>
+            
           </div>
         </a>
 
@@ -113,7 +113,7 @@
           <div class="">
             <h4>Training and Education</h4>
             <i class="bi bi-book-half fa-4x"></i>
-            <p>123 Job Open</p>
+            
           </div>
         </a>
 
@@ -121,7 +121,7 @@
           <div class="">
             <h4>Website & Coder</h4>
             <i class="bi bi-journal-code fa-4x"></i>
-            <p>123 Job Open</p>
+            
           </div>
         </a>
 
@@ -129,7 +129,7 @@
           <div class="">
             <h4>Account & Finance</h4>
             <i class="bi bi-calculator-fill fa-4x"></i>
-            <p>123 Job Open</p>
+            
           </div>
         </a>
 
@@ -137,7 +137,7 @@
           <div class="">
             <h4>Resturant & Food</h4>
             <i class="bi bi-egg-fried fa-4x"></i>
-            <p>123 Job Open</p>
+            
           </div>
         </a>
 
@@ -145,7 +145,7 @@
           <div class="">
             <h4>Health & Hospital</h4>
             <i class="bi bi-palette fa-4x"></i>
-            <p>123 Job Open</p>
+            
           </div>
         </a>
       </div>

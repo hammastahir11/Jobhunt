@@ -72,13 +72,14 @@ class RegisterUser extends Controller
             }
 
             else{
-                $err='User Name or Password is Incorrect!';
-                return view('login',['error',$err]);
+                $err='Password is Incorrect!';
+                return view('login',['error'=>$err]);
             }
             
         }
         else{
-            
+            $err='User Name is Incorrect!';
+                return view('login',['error'=>$err]);
         }
 
 

@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<span class="main_bg"></span>
+    <span class="main_bg"></span>
     <div class="full-page ">
         <div id='login-form' class='login-page d-flex justify-content-center'>
             <div class="form-box">
@@ -26,13 +26,11 @@
                 </div>
                 
                 <form id='login' action="/login" enctype="multipart/form-data"    method="POST" name="form1" class='input-group-login'>
-                   @error($errors){
-
-                       <label for="error" style="color:yellow">$error</label>
-                   }
-                   @enderror
-                   
-                
+                    
+                    @isset($error)       
+                       <label for="error" style="color:rgb(255, 255, 255); text-align: center; background:rgb(150, 10, 10);padding:8px" class='submit-btn'><b>{!!$error!!}</b></label>
+                    @endisset
+                    
                     @csrf
                     <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' required>
                     <input type='text' name="password"  class='input-field' placeholder='Enter Password' required>

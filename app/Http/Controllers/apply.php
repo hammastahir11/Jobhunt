@@ -13,7 +13,7 @@ class apply extends Controller
 
         $apply = new applyjob();
         
-        $apply->userId=Session::get('userId');
+        $apply->userId=Session::get('userId')->userId;
         $apply->postID=Session::get('postId');
         $apply->fullName=Request::input('fname');
         $apply->emailId=Request::input('email');
