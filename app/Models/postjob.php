@@ -9,5 +9,6 @@ class postjob extends Model
 {
     use HasFactory;
     public $timestamps=false;
+    
     protected $primarykey = 'postId';
 }

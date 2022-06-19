@@ -28,10 +28,10 @@
 <body>
 
     <div class="container">
-      <ul class="nav nav-pills">
-        <li class="active"><a data-toggle="pill" href="#home">Applied Jobs</a></li>
-        <li><a data-toggle="pill" href="#menu1">Post Jobs</a></li>
-        <li><a data-toggle="pill" href="#menu2">Recieved Jobs</a></li>
+      <ul class="nav nav-pills nav-pills-primary">
+        <li class="{{ $tabactive == 1 ? 'active' : '' }}"><a data-toggle="pill" href="#appliedjob">Applied Jobs</a></li>
+        <li class="{{ $tabactive == 2 ? 'active' : '' }}"><a data-toggle="pill" href="#menu1">Post Jobs</a></li>
+        <li class="{{ $tabactive == 3 ? 'active' : '' }}"><a data-toggle="pill" href="#menu2">Offer Recieved</a></li>
       </ul>
       
 
@@ -49,7 +49,7 @@
 
       <div class="tab-content">
         {{-- Applied Jobs --}}
-        <div id="home" class="tab-pane fade in active">
+        <div id="appliedjob" class="tab-pane fade in {{ $tabactive == 1 ? 'active' : '' }}">
             
             <h4 class="parrotColor position-sticky p-2 m-2 bg-white border rounded ">Applied Job List</h4>
     <div class="container">
@@ -61,26 +61,33 @@
             <div class="col-5 bgcolorp ScrollingJobs justify-content-center text-center outleftcontainerunder">
                
 
-                
+                @if($Jobs_Applied!=NULL)
+                @foreach($Jobs_Applied as $data)
+                    
                 <div class="col-5 p-2 w-100 JobListItem text-start bg-white rounded my-3">
-                        <h6 style="color: #89ba16" >Part Time</h6>
-                        <h5>Frontend Developer</h5>
-                        <p>Facebook.Inc</p>
+                    <a href="/delete/{{$data->postId}}" class="btn bg-primary" styel="text-decoration: none;">Delete</a>
+                    <a href="/appliedJobDescription/{{$data->postId}}" class="btn bg-primary" styel="text-decoration: none;">Description</a>
+                    
+                    <h6 style="color: #89ba16" >{{$data->EmploymentType}}</h6>
+                    <h5>{{$data->Title}}</h5>
+                    <p>{{$data->CompanyName}}</p>
                 </div>
-                 
+                @endforeach
+                 @endif
             </div>
 
 
 
-            <div class=" col-7   ">
+            <div class=" col-7  ScrollingJobs ">
                 <div >
-                    <h3 class="text-center   bg-dark p-3" style="color: #89ba16" >Job Description</h3>
-                    <h4>Post Of Job</h4>
-                    <i class="bi bi-bag-fill h6">  (Internship,fullTime,Remote)</i><br>
-                    <i class="bi bi-building h6">Address</i>
+                    @if($Jobs_Applied!=Null)
+                    <h3 class="text-center    bg-dark p-3" style="color: #89ba16" >Job Description</h3>
+                    <h4>{{$firstjob->Title}}</h4>
+                    <i class="bi bi-bag-fill h6">  {{$firstjob->EmploymentType}}</i><br>
+                    <i class="bi bi-building h6">{{$firstjob->JobLocation}}</i>
         
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias beatae aperiam, fugiat cupiditate, ea tempora qui, fuga tempore distinctio iusto nobis modi? Expedita voluptas repudiandae velit? Modi, repellat iusto.</p>
-        
+                    <p>{!!$firstjob->JobDescription!!}</p>
+                    @endif
                 </div>  
             </div>
         </div>
@@ -109,7 +116,7 @@
 
 
         {{-- Post Job --}}
-        <div id="menu1" class="tab-pane fade">
+        <div id="menu1" class="tab-pane fade in {{ $tabactive == 2 ? 'active' : '' }}">
             <h4 class="parrotColor position-sticky p-2 m-2 bg-white border rounded ">Posted Job List</h4>
             <div class="container">
         
@@ -120,12 +127,20 @@
                     <div class="col-5  bgcolorp ScrollingJobs justify-content-center text-center outleftcontainerunder">
                        
         
-                        
+                        @if($postjobs!=NULL)
+                        @foreach($postjobs as $job)
                         <div class="col-5 p-2 w-100 JobListItem text-start bg-white rounded my-3">
-                                <h6 style="color: #89ba16" >Part Time</h6>
-                                <h5>Frontend Developer</h5>
-                                <p>Facebook.Inc</p>
+                            
+                            <a href="/delete/{{$job->postId}}" class="btn bg-primary" styel="text-decoration: none;">Delete</a>
+                            <a href="/postJobDescription/{{$job->postId}}" class="btn bg-primary" styel="text-decoration: none;">Description</a>
+                    
+                            <h6 style="color: #89ba16" >{{$job->EmploymentType}}</h6>
+                            <h5>{{$job->Title}}</h5>
+                            <p>{{$job->CompanyName}}</p>
+                           
                         </div>
+                        @endforeach
+                        @endif
                         
                     </div>
         
@@ -134,16 +149,18 @@
                     <div class="  col-7   ">
                         
         
+                        @if($firstpostjob!=NULL)
                         <div >
                             <h3 class="text-center   bg-dark p-3" style="color: #89ba16" >Job Description</h3>
-                            <h4>Post Of Job</h4>
-                            <i class="bi bi-bag-fill h6">  (Internship,fullTime,Remote)</i><br>
-                            <i class="bi bi-building h6">Address</i>
+                            <h4>{{$firstpostjob->Title}}</h4>
+                            <i class="bi bi-bag-fill h6">{{$firstpostjob->EmploymentType}}</i><br>
+                            <i class="bi bi-building h6">{{$firstpostjob->JobLocation}}</i>
+
                 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias beatae aperiam, fugiat cupiditate, ea tempora qui, fuga tempore distinctio iusto nobis modi? Expedita voluptas repudiandae velit? Modi, repellat iusto.</p>
+                            <p>{!!$firstpostjob->JobDescription!!}</p>
                 
                         </div>  
-        
+                        @endif
         
                     </div>
                 </div>
@@ -174,7 +191,7 @@
 
 
 
-        <div id="menu2" class="tab-pane fade">
+        <div id="menu2" class="tab-pane fade {{ $tabactive == 3 ? 'active' : '' }}">
             <h4 class="parrotColor position-sticky p-2 m-2 bg-white border rounded ">Proposal Recieved List</h4>
             <div class="container">
         
@@ -185,12 +202,15 @@
                     <div class="col-5 bgcolorp ScrollingJobs justify-content-center text-center outleftcontainerunder">
                        
         
-                        
+                        @if($offerRecieved!=NULL)
+                        @foreach($offerRecieved as $offers)
                         <div class="col-5 p-2 w-100 JobListItem text-start bg-white rounded my-3">
-                                <h6 style="color: #89ba16" >Part Time</h6>
-                                <h5>Frontend Developer</h5>
-                                <p>Facebook.Inc</p>
+                                <h6 style="color: #89ba16" >{{$offers->emailId}}</h6>
+                                <h5>{{$offers->fName}}</h5>
+                                <p>{{$offers->Title}}</p>
                         </div>
+                        @endforeach
+                        @endif
                       
                     </div>
         

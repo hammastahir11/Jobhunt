@@ -15,7 +15,27 @@ class apply extends Controller
         
         $apply->userId=Session::get('userId')->userId;
         $apply->postID=Session::get('postId');
+        $applyId=applyjob::where('userId',Session::get('userId')->userId)->get();
+        foreach($applyId as $applyied){
+            if($applyied->postId==Session::get('postId')){
+                return view('JobApply',['error'=>'You have already apply for this post']);
+            }
+        }
+       
+        if(Request::input('fname')==NULL){
+            return view('JobApply',['error'=>'Please Fill first Name']);
+        }
+        if(Request::input('email')==NULL){
+            return view('JobApply',['error'=>'Please Fill Email']);
+        }
+        if(Request::input('pNumber')==NULL){
+            return view('JobApply',['error'=>'Please write Phone Number']);
+        }
+        // if(Request::input('resume')==NULL){
+        //     return view('JobApply',['error'=>'Please Attach File']);
+        // }
         $apply->fullName=Request::input('fname');
+
         $apply->emailId=Request::input('email');
         $apply->phoneNumber=Request::input('pNumber');
         $file=Request::input('resume');

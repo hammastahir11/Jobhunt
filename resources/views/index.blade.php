@@ -203,7 +203,7 @@
       </div>
 
       <!--Add for SignUp-->
-
+      @if(Session::get('userId')==NULL)
       <div class="p-5 w-100 bgcolor my-3">
         <div class="row d-flex justify-content-start">
           <div class="col text-start bcolor">
@@ -223,6 +223,7 @@
           </div>
         </div>
       </div>
+      @endif
 
       <!--Testimonials-->
       <section>

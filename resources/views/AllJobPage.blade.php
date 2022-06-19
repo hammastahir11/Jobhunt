@@ -68,7 +68,9 @@
         <div class="col-6 shadow-lg rounded border my-2">
           <h6 style="color: #89ba16" >Job Description</h6>
           @if(Session::get('userId')!=NULL)
+          @if($jobDes!=NULL)
           <a href="/jobapply" class="btn btn-primary ">apply</a>
+          @endif
           @endif      
           <div  class="ScrollingJobs position-static">
             @if($jobDes!=NULL)

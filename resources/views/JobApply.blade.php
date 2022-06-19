@@ -18,6 +18,7 @@
 </head>
 <body>
 
+    
     <div class="container">
         <div class="row w-100  rounded">
             <div class="col-5 shadow-lg  p-5 bgcolorp justify-content-center text-center outleftcontainerunder">
@@ -26,12 +27,15 @@
             </div>
             <div class="shadow-lg  col-7 py-5 text-center align-content-center justify-content-center">
                 <h4>Personal Info</h4>
-            <form action="/apply" method="POST"  >
-                @csrf
-                <input type="text" name="fname" placeholder="Full Name" class="w-50 border p-1 m-3 rounded">
-                <input type="text" name="email" placeholder="Email" class="w-50 border p-1 m-3 rounded">
-                <input type="text" name="pNumber" placeholder="Phone Number" class="w-50 border p-1 m-3 rounded">
-                <label for="Resume" class="w-50 border-0 p-1 m-3 rounded">Upload .pdf/.docx Resume file </label>
+                @isset($error)       
+                    <label for="error" style="color:rgb(255, 255, 255); text-align: center; background:rgb(150, 10, 10);padding:8px" class='submit-btn'><b>{!!$error!!}</b></label>
+                @endisset
+                <form action="/apply" method="POST"  >
+                    @csrf
+                    <input type="text" name="fname" placeholder="Full Name" class="w-50 border p-1 m-3 rounded">
+                    <input type="text" name="email" placeholder="Email" class="w-50 border p-1 m-3 rounded">
+                    <input type="text" name="pNumber" placeholder="Phone Number" class="w-50 border p-1 m-3 rounded">
+                    <label for="Resume" class="w-50 border-0 p-1 m-3 rounded">Upload .pdf/.docx Resume file </label>
                 <input type="file" name="resume" id="Resume" placeholder="Choose Resume" class="w-50 border p-1 m-3 rounded"><br>
                 <button type="submit" class="btn bg-warning text-light">Apply</button>
             </form>
