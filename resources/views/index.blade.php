@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
+
+
   <!--font awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -80,15 +83,19 @@
 
             </i> -->
 
-        <input type="text" class="shadow rounded workSearch" placeholder="   i:e Graphic Designer" />
+            <form action="/Search" method="POST">
+              {{-- @csrf --}}
+          <input type="text" name="SearchField" id="SearchBox" class="shadow rounded workSearch" placeholder="   i:e Graphic Designer" />
+  
+          <button type="submit" id="SearchCandidate" class="btnset shadow rounded">
+            Search Candidate
+          </button>
+  
+          <button type="submit" class="btnset shadow rounded">
+            &nbsp;&nbsp;&nbsp;Search Job&nbsp; &nbsp;&nbsp;
+          </button>
 
-        <button type="button" class="btnset shadow rounded">
-          Search Candidate
-        </button>
-
-        <button type="button" class="btnset shadow rounded">
-          &nbsp;&nbsp;&nbsp;Search Job&nbsp; &nbsp;&nbsp;
-        </button>
+        </form>
       </div>
     </div>
   </div>
@@ -339,13 +346,41 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
 
 
 
 
   <script>
     $("document").ready(function () {
+
+      /*Aleart box*/
+
+      $('#SearchBox1').on('change',function () {
+       console.log("btn click");
+        var data=$('#SearchBox').val();
+
+        
+
+        
+            Swal.fire({
+                title: data,
+                type: 'success',
+                showCloseButton: true
+            })
+        
+    })
+
+      /*Aleart Box End*/
+
+
+
+
+
+
+
+
+
       $("#kashif")
         .children()
         .hover(
@@ -357,6 +392,8 @@
             $(this).removeClass("shadow");
           }
         );
+
+
 
 
 

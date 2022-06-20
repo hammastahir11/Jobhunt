@@ -65,7 +65,7 @@
                 @foreach($Jobs_Applied as $data)
                     
                 <div class="col-5 p-2 w-100 JobListItem text-start bg-white rounded my-3">
-                    <a href="/delete/{{$data->postId}}" class="btn bg-primary" styel="text-decoration: none;">Delete</a>
+                    <a href="/deleteAppliedJob/{{$data->applyId}}" class="btn bg-primary" styel="text-decoration: none;">Delete</a>
                     <a href="/appliedJobDescription/{{$data->postId}}" class="btn bg-primary" styel="text-decoration: none;">Description</a>
                     
                     <h6 style="color: #89ba16" >{{$data->EmploymentType}}</h6>
@@ -80,7 +80,7 @@
 
             <div class=" col-7  ScrollingJobs ">
                 <div >
-                    @if($Jobs_Applied!=Null)
+                    @if($firstjob!=Null)
                     <h3 class="text-center    bg-dark p-3" style="color: #89ba16" >Job Description</h3>
                     <h4>{{$firstjob->Title}}</h4>
                     <i class="bi bi-bag-fill h6">  {{$firstjob->EmploymentType}}</i><br>
@@ -131,7 +131,7 @@
                         @foreach($postjobs as $job)
                         <div class="col-5 p-2 w-100 JobListItem text-start bg-white rounded my-3">
                             
-                            <a href="/delete/{{$job->postId}}" class="btn bg-primary" styel="text-decoration: none;">Delete</a>
+                            <a href="/postJobdelete/{{$job->postId}}" class="btn bg-primary" styel="text-decoration: none;">Delete</a>
                             <a href="/postJobDescription/{{$job->postId}}" class="btn bg-primary" styel="text-decoration: none;">Description</a>
                     
                             <h6 style="color: #89ba16" >{{$job->EmploymentType}}</h6>
@@ -207,6 +207,7 @@
                         <div class="col-5 p-2 w-100 JobListItem text-start bg-white rounded my-3">
                             <a href="/deleteoffer/{{$offers->applyId}}" class="btn bg-primary" styel="text-decoration: none;">Delete</a>
                             <a href="/offerJobDescription/{{$offers->applyId}}" class="btn bg-primary" styel="text-decoration: none;">Description</a>
+                            <a href="/Chat/{{$offers->userId}}" class="btn bg-primary" styel="text-decoration: none;">Chat</a>
                     
                                 <h6 style="color: #89ba16" >{{$offers->emailId}}</h6>
                                 <h5>{{$offers->fName}}</h5>
@@ -224,12 +225,13 @@
         
                         <div >
                             <h3 class="text-center     bg-dark p-3" style="color: #89ba16" >Job Description</h3>
+                            @if($offerRecievedfirst!=NULL)
                             <h4>{{$offerRecievedfirst->Title}}</h4>
                             <i class="bi bi-bag-fill h6"> {{$offerRecievedfirst->fName}} (Internship,fullTime,Remote)</i><br>
                             <i class="bi bi-building h6">{{$offerRecievedfirst->emailId}}</i>
                 
                             <p>{!!$offerRecievedfirst->JobDescription!!}</p>
-                
+                            @endif
                         </div>   
         
         

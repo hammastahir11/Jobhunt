@@ -19,20 +19,43 @@ class specificUserJobData extends Controller
 
     public function JobsDetails(){
 
+
+        
         $id=Session::get('userId')->userId;
         //$Jobs_Applied=applyjob::where('userId',$id)->get();
-        $Jobs_Applied = applyjob::join('postjobs','postjobs.postId','=','applyjobs.postId')->where('applyjobs.userId',$id)->get(['postjobs.postId','postjobs.EmploymentType','postjobs.Title','postjobs.CompanyName','postjobs.JobDescription']);
-        $firstAppliedjob=$Jobs_Applied[0];
+        $Jobs_Applied = applyjob::join('postjobs','postjobs.postId','=','applyjobs.postId')->where('applyjobs.userId',$id)->get(['postjobs.postId','applyjobs.applyId','postjobs.EmploymentType','postjobs.Title','postjobs.CompanyName','postjobs.JobDescription']);
+        if(count($Jobs_Applied)!=0){
+            
+            $firstAppliedjob=$Jobs_Applied[0];
+        }
+        else{
+            $firstAppliedjob=NULL;
+        }
+
+
 
         $mypostJob=postjob::where('userId',$id)->get();
-        $firstPostJobs=postjob::where('userId',$id)->get()->first();
+
+        if(count($mypostJob)!=0){
+
+            $firstPostJobs=$mypostJob[0];
+        }
+        else{
+            $firstPostJobs=NULL;
+        }
+        //$firstPostJobs=postjob::where('userId',$id)->get()->first();
 
 
         $off=DB::table('user_profiles')->join('applyjobs','user_profiles.userId','=','applyjobs.userId')->join('postjobs','postjobs.postId','=','applyjobs.postId')->where('postjobs.userId',$id)->select('user_profiles.fName','applyjobs.applyId','applyjobs.postId','user_profiles.lName','postjobs.JobDescription','user_profiles.userId','user_profiles.emailId','postjobs.Title')->get();
         
        
-        
-        $offerRecievedfirst=$off[0];
+        if(count($off)!=0){
+
+            $offerRecievedfirst=$off[0];
+        }
+        else{
+            $offerRecievedfirst=NULL;
+        }
 
         
 
@@ -40,7 +63,6 @@ class specificUserJobData extends Controller
         
         return view('AppliedandPostJobList',compact('Jobs_Applied'),['firstjob'=>$firstAppliedjob,'postjobs'=>$mypostJob,'firstpostjob'=>$firstPostJobs,'tabactive'=>1,'offerRecieved'=>$off,'offerRecievedfirst'=>$offerRecievedfirst]);
         
-
     } 
 
 
@@ -56,9 +78,72 @@ class specificUserJobData extends Controller
 
 
         $off=DB::table('user_profiles')->join('applyjobs','user_profiles.userId','=','applyjobs.userId')->join('postjobs','postjobs.postId','=','applyjobs.postId')->where('postjobs.userId',$id)->select('user_profiles.fName','applyjobs.applyId','applyjobs.postId','user_profiles.lName','postjobs.JobDescription','user_profiles.userId','user_profiles.emailId','postjobs.Title')->get();
-        $offerRecievedfirst=$off[0];
+        
+        if(count($off)!=0){
+
+            $offerRecievedfirst=$off[0];
+        }
+        else{
+            $offerRecievedfirst=NULL;
+        }
 
         return view('AppliedandPostJobList',compact('Jobs_Applied'),['firstjob'=>$firstjob,'postjobs'=>$mypostJob,'firstpostjob'=>$firstPostJobs,'tabactive'=>1,'offerRecieved'=>$off,'offerRecievedfirst'=>$offerRecievedfirst]);
+    }
+
+
+    public function DeleteJobApply($applyId){
+           
+      
+        $deleteRecored = applyjob::where('applyId',$applyId);
+        $deleteRecored->delete();       
+        
+ 
+        $id=Session::get('userId')->userId;
+        //$Jobs_Applied=applyjob::where('userId',$id)->get();
+        $Jobs_Applied = applyjob::join('postjobs','postjobs.postId','=','applyjobs.postId')->where('applyjobs.userId',$id)->get(['postjobs.postId','applyjobs.applyId','postjobs.EmploymentType','postjobs.Title','postjobs.CompanyName','postjobs.JobDescription']);
+        if(count($Jobs_Applied)!=0){
+            
+            $firstAppliedjob=$Jobs_Applied[0];
+        }
+        else{
+            $firstAppliedjob=NULL;
+        }
+
+
+
+        $mypostJob=postjob::where('userId',$id)->get();
+
+        if(count($mypostJob)!=0){
+
+            $firstPostJobs=$mypostJob[0];
+        }
+        else{
+            $firstPostJobs=NULL;
+        }
+        //$firstPostJobs=postjob::where('userId',$id)->get()->first();
+
+
+        $off=DB::table('user_profiles')->join('applyjobs','user_profiles.userId','=','applyjobs.userId')->join('postjobs','postjobs.postId','=','applyjobs.postId')->where('postjobs.userId',$id)->select('user_profiles.fName','applyjobs.applyId','applyjobs.postId','user_profiles.lName','postjobs.JobDescription','user_profiles.userId','user_profiles.emailId','postjobs.Title')->get();
+        
+       
+        if(count($off)!=0){
+
+            $offerRecievedfirst=$off[0];
+        }
+        else{
+            $offerRecievedfirst=NULL;
+        }
+
+        
+
+
+        
+        return view('AppliedandPostJobList',compact('Jobs_Applied'),['firstjob'=>$firstAppliedjob,'postjobs'=>$mypostJob,'firstpostjob'=>$firstPostJobs,'tabactive'=>1,'offerRecieved'=>$off,'offerRecievedfirst'=>$offerRecievedfirst]);
+        
+
+
+       // $request->session()->flash('alert-success', ' Report is deleted successfully.');
+     
     }
 
 
@@ -66,17 +151,85 @@ class specificUserJobData extends Controller
     public function postJobDescription($postId){
         $id=Session::get('userId')->userId;
         $Jobs_Applied = applyjob::join('postjobs','postjobs.postId','=','applyjobs.postId')->get(['postjobs.postId','postjobs.EmploymentType','postjobs.Title','postjobs.CompanyName','postjobs.JobDescription','postjobs.JobLocation']);
-        $firstAppliedjob=$Jobs_Applied[0];
+        if(count($Jobs_Applied)!=0){
+            
+            $firstAppliedjob=$Jobs_Applied[0];
+        }
+        else{
+            $firstAppliedjob=NULL;
+        }
 
         $mypostJob=postjob::where('userId',$id)->get();
         $firstPostJobs=postjob::where('postId',$postId)->get()->first();
 
 
         $off=DB::table('user_profiles')->join('applyjobs','user_profiles.userId','=','applyjobs.userId')->join('postjobs','postjobs.postId','=','applyjobs.postId')->where('postjobs.userId',$id)->select('user_profiles.fName','applyjobs.postId','applyjobs.applyId','user_profiles.lName','postjobs.JobDescription','user_profiles.userId','user_profiles.emailId','postjobs.Title')->get();
-        $offerRecievedfirst=$off[0];
+        if(count($off)!=0){
+
+            $offerRecievedfirst=$off[0];
+        }
+        else{
+            $offerRecievedfirst=NULL;
+        }
+
 
         return view('AppliedandPostJobList',compact('Jobs_Applied'),['firstjob'=>$firstAppliedjob,'postjobs'=>$mypostJob,'firstpostjob'=>$firstPostJobs,'tabactive'=>2,'offerRecieved'=>$off,'offerRecievedfirst'=>$offerRecievedfirst]);
     }
+
+
+    public function DeleteJobPost($postId){
+        $deleteRecored = postjob::where('postId',$postId);
+        $deleteRecored->delete();       
+        
+
+
+        $id=Session::get('userId')->userId;
+        //$Jobs_Applied=applyjob::where('userId',$id)->get();
+        $Jobs_Applied = applyjob::join('postjobs','postjobs.postId','=','applyjobs.postId')->where('applyjobs.userId',$id)->get(['postjobs.postId','applyjobs.applyId','postjobs.EmploymentType','postjobs.Title','postjobs.CompanyName','postjobs.JobDescription']);
+        if(count($Jobs_Applied)!=0){
+            
+            $firstAppliedjob=$Jobs_Applied[0];
+        }
+        else{
+            $firstAppliedjob=NULL;
+        }
+
+
+
+        $mypostJob=postjob::where('userId',$id)->get();
+
+        if(count($mypostJob)!=0){
+
+            $firstPostJobs=$mypostJob[0];
+        }
+        else{
+            $firstPostJobs=NULL;
+        }
+        //$firstPostJobs=postjob::where('userId',$id)->get()->first();
+
+
+        $off=DB::table('user_profiles')->join('applyjobs','user_profiles.userId','=','applyjobs.userId')->join('postjobs','postjobs.postId','=','applyjobs.postId')->where('postjobs.userId',$id)->select('user_profiles.fName','applyjobs.applyId','applyjobs.postId','user_profiles.lName','postjobs.JobDescription','user_profiles.userId','user_profiles.emailId','postjobs.Title')->get();
+        
+       
+        if(count($off)!=0){
+
+            $offerRecievedfirst=$off[0];
+        }
+        else{
+            $offerRecievedfirst=NULL;
+        }
+
+        
+
+
+        
+        return view('AppliedandPostJobList',compact('Jobs_Applied'),['firstjob'=>$firstAppliedjob,'postjobs'=>$mypostJob,'firstpostjob'=>$firstPostJobs,'tabactive'=>2,'offerRecieved'=>$off,'offerRecievedfirst'=>$offerRecievedfirst]);
+        
+
+        
+    }
+
+
 
 
     public function offerJobDescription($offerid){
@@ -93,6 +246,58 @@ class specificUserJobData extends Controller
 
         return view('AppliedandPostJobList',compact('Jobs_Applied'),['firstjob'=>$firstAppliedjob,'postjobs'=>$mypostJob,'firstpostjob'=>$firstPostJobs,'tabactive'=>3,'offerRecieved'=>$off,'offerRecievedfirst'=>$offerRecievedfirst]);
     
+    }
+
+
+    public function DeleteJoboffers($offerid){
+        $deleteRecored = applyjob::where('applyId',$offerid);
+        $deleteRecored->delete();       
+        
+
+
+        $id=Session::get('userId')->userId;
+        //$Jobs_Applied=applyjob::where('userId',$id)->get();
+        $Jobs_Applied = applyjob::join('postjobs','postjobs.postId','=','applyjobs.postId')->where('applyjobs.userId',$id)->get(['postjobs.postId','applyjobs.applyId','postjobs.EmploymentType','postjobs.Title','postjobs.CompanyName','postjobs.JobDescription']);
+        if(count($Jobs_Applied)!=0){
+            
+            $firstAppliedjob=$Jobs_Applied[0];
+        }
+        else{
+            $firstAppliedjob=NULL;
+        }
+
+
+
+        $mypostJob=postjob::where('userId',$id)->get();
+
+        if(count($mypostJob)!=0){
+
+            $firstPostJobs=$mypostJob[0];
+        }
+        else{
+            $firstPostJobs=NULL;
+        }
+        //$firstPostJobs=postjob::where('userId',$id)->get()->first();
+
+
+        $off=DB::table('user_profiles')->join('applyjobs','user_profiles.userId','=','applyjobs.userId')->join('postjobs','postjobs.postId','=','applyjobs.postId')->where('postjobs.userId',$id)->select('user_profiles.fName','applyjobs.applyId','applyjobs.postId','user_profiles.lName','postjobs.JobDescription','user_profiles.userId','user_profiles.emailId','postjobs.Title')->get();
+        
+       
+        if(count($off)!=0){
+
+            $offerRecievedfirst=$off[0];
+        }
+        else{
+            $offerRecievedfirst=NULL;
+        }
+
+        
+
+
+        
+        return view('AppliedandPostJobList',compact('Jobs_Applied'),['firstjob'=>$firstAppliedjob,'postjobs'=>$mypostJob,'firstpostjob'=>$firstPostJobs,'tabactive'=>3,'offerRecieved'=>$off,'offerRecievedfirst'=>$offerRecievedfirst]);
+        
+
     }
 
 

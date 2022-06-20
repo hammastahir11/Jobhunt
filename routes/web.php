@@ -96,11 +96,17 @@ Route::get('/SoftwareDev/allJobs/{category}','App\Http\Controllers\homePage@Cate
 //Search by category on index page
 Route::get('/JobsDetails','App\Http\Controllers\specificUserJobData@JobsDetails');
 Route::get('/appliedJobDescription/{postId}','App\Http\Controllers\specificUserJobData@Descriptoin');
+Route::get('/deleteAppliedJob/{applyId}','App\Http\Controllers\specificUserJobData@DeleteJobApply');
+
 Route::get('/postJobDescription/{postId}','App\Http\Controllers\specificUserJobData@postJobDescription');
+Route::get('/postJobdelete/{postId}','App\Http\Controllers\specificUserJobData@DeleteJobPost');
+
 Route::get('/offerJobDescription/{applyId}','App\Http\Controllers\specificUserJobData@offerJobDescription');
+Route::get('/deleteoffer/{applyId}','App\Http\Controllers\specificUserJobData@DeleteJoboffers');
 
 
-
+///Search
+Route::get('/Search','App\Http\Controllers\Searching@searchCandidate');
 
 
 //LOGOUT
