@@ -97,6 +97,9 @@ Route::get('/SoftwareDev/allJobs/{category}','App\Http\Controllers\homePage@Cate
 Route::get('/JobsDetails','App\Http\Controllers\specificUserJobData@JobsDetails');
 Route::get('/appliedJobDescription/{postId}','App\Http\Controllers\specificUserJobData@Descriptoin');
 Route::get('/postJobDescription/{postId}','App\Http\Controllers\specificUserJobData@postJobDescription');
+Route::get('/offerJobDescription/{applyId}','App\Http\Controllers\specificUserJobData@offerJobDescription');
+
+
 
 
 

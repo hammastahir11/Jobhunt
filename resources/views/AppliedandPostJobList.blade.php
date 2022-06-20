@@ -146,7 +146,7 @@
         
         
         
-                    <div class="  col-7   ">
+                    <div class="  col-7  ScrollingJobs ">
                         
         
                         @if($firstpostjob!=NULL)
@@ -191,7 +191,7 @@
 
 
 
-        <div id="menu2" class="tab-pane fade {{ $tabactive == 3 ? 'active' : '' }}">
+        <div id="menu2" class="tab-pane fade in {{ $tabactive == 3 ? 'active' : '' }}">
             <h4 class="parrotColor position-sticky p-2 m-2 bg-white border rounded ">Proposal Recieved List</h4>
             <div class="container">
         
@@ -205,6 +205,9 @@
                         @if($offerRecieved!=NULL)
                         @foreach($offerRecieved as $offers)
                         <div class="col-5 p-2 w-100 JobListItem text-start bg-white rounded my-3">
+                            <a href="/deleteoffer/{{$offers->applyId}}" class="btn bg-primary" styel="text-decoration: none;">Delete</a>
+                            <a href="/offerJobDescription/{{$offers->applyId}}" class="btn bg-primary" styel="text-decoration: none;">Description</a>
+                    
                                 <h6 style="color: #89ba16" >{{$offers->emailId}}</h6>
                                 <h5>{{$offers->fName}}</h5>
                                 <p>{{$offers->Title}}</p>
@@ -216,16 +219,16 @@
         
         
         
-                    <div class=" col-7   ">
+                    <div class=" col-7  ScrollingJobs ">
                         
         
                         <div >
-                            <h3 class="text-center   bg-dark p-3" style="color: #89ba16" >Job Description</h3>
-                            <h4>Post Of Job</h4>
-                            <i class="bi bi-bag-fill h6">  (Internship,fullTime,Remote)</i><br>
-                            <i class="bi bi-building h6">Address</i>
+                            <h3 class="text-center     bg-dark p-3" style="color: #89ba16" >Job Description</h3>
+                            <h4>{{$offerRecievedfirst->Title}}</h4>
+                            <i class="bi bi-bag-fill h6"> {{$offerRecievedfirst->fName}} (Internship,fullTime,Remote)</i><br>
+                            <i class="bi bi-building h6">{{$offerRecievedfirst->emailId}}</i>
                 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestias beatae aperiam, fugiat cupiditate, ea tempora qui, fuga tempore distinctio iusto nobis modi? Expedita voluptas repudiandae velit? Modi, repellat iusto.</p>
+                            <p>{!!$offerRecievedfirst->JobDescription!!}</p>
                 
                         </div>   
         
