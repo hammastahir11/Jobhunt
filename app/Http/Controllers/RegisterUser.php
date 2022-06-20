@@ -15,13 +15,14 @@ class RegisterUser extends Controller
 
    public function createProfile(){
         $user_info = new userinfo();
+        $user_info->userId=Session::get('userId')->userId;
         $user_info->profession = Request::input('field');
         $user_info->dateOfBirth = Request::input('dob');
         $user_info->city = Request::input('city');
         $user_info->country = Request::input('country');
         $user_info->phoneNumber = Request::input('phone');
-        $user_info->portfolioSite = Request::input('website');
-        $user_info->Address = Request::input('address');
+        //$user_info->portfolioSite = Request::input('website');
+        //$user_info->Address = Request::input('address');
         $user_info->save();
         return redirect('editprofile');
    }
@@ -79,7 +80,7 @@ class RegisterUser extends Controller
         }
         else{
             $err='User Name is Incorrect!';
-                return view('login',['error'=>$err]);
+            return view('login',['error'=>$err]);
         }
 
 

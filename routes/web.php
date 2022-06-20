@@ -106,7 +106,7 @@ Route::get('/deleteoffer/{applyId}','App\Http\Controllers\specificUserJobData@De
 
 
 ///Search
-Route::get('/Search','App\Http\Controllers\Searching@searchCandidate');
+Route::POST('/Search','App\Http\Controllers\Searching@searchCandidate');
 
 
 //LOGOUT

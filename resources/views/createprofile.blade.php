@@ -16,6 +16,7 @@
 <body>
     <span class="main_bg"></span>
     <form id="multistepsform" action="/editprofile" method="POST">
+        @csrf
         <!-- progressbar -->
         <ul id="progressbar">
             
@@ -63,7 +64,7 @@
             <input type="button"  class="add_field_button action-button" value="Add Experience" />
             <br>
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+            <input type="submit" name="submit" class=" action-button" value="Submit" />
         </fieldset>
     </form>
 

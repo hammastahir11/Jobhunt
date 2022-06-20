@@ -30,19 +30,23 @@
         <div class="col-12 p-2 ScrollingJobs my-2  shadow-lg" id="kashif">
     
             <div class="col-6 p-2 w-100 JobListItem bg-white rounded my-3">
+              @if($candidates!=NULL)
+              @foreach($candidates as $candidate)
               <div class="row">
                 <div class="col">
                   <h6 style="color: #89ba16" >2 year experience</h6>
-                  <h2>KASHIF SATTAR</h2>
-                  <span>Graphic designer</span>
+                  <h2>{{$candidate->fName}}  {{$candidate->lName}}  </h2>
+                  <span>{{$candidate->profession}}</span>
                   
                 </div>
                 <div
                   class="col align-items-center text-end d-flex align-items-center justify-content-md-end"
                 >
-                  <button type="button" class="btn px-5 btn-primary"><a class="anchorTag" href="JobApply.html">Chat</a></button>
+                  <button type="button" class="btn px-5 btn-primary"><a class="anchorTag" href="/chat/{{$candidate->userId}}">Chat</a></button>
                 </div>
               </div>
+              @endforeach
+              @endif
             </div>
     
         </div>

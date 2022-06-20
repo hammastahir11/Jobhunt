@@ -84,16 +84,16 @@
             </i> -->
 
             <form action="/Search" method="POST">
-              {{-- @csrf --}}
+              @csrf
           <input type="text" name="SearchField" id="SearchBox" class="shadow rounded workSearch" placeholder="   i:e Graphic Designer" />
   
           <button type="submit" id="SearchCandidate" class="btnset shadow rounded">
             Search Candidate
           </button>
   
-          <button type="submit" class="btnset shadow rounded">
+          {{-- <button type="submit" class="btnset shadow rounded">
             &nbsp;&nbsp;&nbsp;Search Job&nbsp; &nbsp;&nbsp;
-          </button>
+          </button> --}}
 
         </form>
       </div>
