@@ -1,13 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisterUser;
-use App\Http\Controllers\createJobs;
-use App\Http\Controllers\userControl;
-use App\Http\Controllers\homePage;
-use App\Http\Controllers\specificUserJobData;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +11,12 @@ use App\Http\Controllers\specificUserJobData;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 // Route::get('/', function () {
 //     return view('index');
 // });
 
-Route::get('/','App\Http\Controllers\createJobs@index');
+Route::get('/', 'App\Http\Controllers\createJobs@index');
 
 Route::get('/home', function () {
     return view('index');
@@ -57,66 +50,48 @@ Route::get(('login'), function () {
 //     return view('createprofile');
 // });
 
-
 Route::get(('menu'), function () {
     return view('Layouts.layout');
 });
 
-
-
-
-
-
-
 //////////////
-Route::post('/register','App\Http\Controllers\RegisterUser@store');
-Route::post('/login','App\Http\Controllers\RegisterUser@LoginUser');
-Route::post('/saveProfile','App\Http\Controllers\RegisterUser@createProfile');
-Route::get('/viewProfile','App\Http\Controllers\RegisterUser@ViewProfile');
+Route::post('/register', 'App\Http\Controllers\RegisterUser@store');
+Route::post('/login', 'App\Http\Controllers\RegisterUser@LoginUser');
+Route::post('/saveProfile', 'App\Http\Controllers\RegisterUser@createProfile');
+Route::get('/viewProfile', 'App\Http\Controllers\RegisterUser@ViewProfile');
 
-Route::get('/editprofile','App\Http\Controllers\RegisterUser@updateProfile');
-
-
+Route::get('/editprofile', 'App\Http\Controllers\RegisterUser@updateProfile');
 
 //ApplyJob
-Route::post('/apply','App\Http\Controllers\apply@store');
+Route::post('/apply', 'App\Http\Controllers\apply@store');
 
-
-
-
-//////////////////////////////////////////
-Route::post('/CreateJob','App\Http\Controllers\createJobs@store');
-
-Route::get('/allJobs','App\Http\Controllers\createJobs@AllJobs');
-Route::get('/ShowJobData','App\Http\Controllers\createJobs@ShowJobData');
-
+// Creating Jobs
+Route::post('/CreateJob', 'App\Http\Controllers\createJobs@store');
+//Show all jobs data on job page
+Route::get('/allJobs', 'App\Http\Controllers\createJobs@AllJobs');
+//show job data on index page
+Route::get('/ShowJobData', 'App\Http\Controllers\createJobs@ShowJobData');
 
 //Check discription of jobs on allJobPage
-Route::get('/jobdescription/{id}','App\Http\Controllers\createJobs@jobDescription');
+Route::get('/jobdescription/{id}', 'App\Http\Controllers\createJobs@jobDescription');
 
 //Search by category on index page
-Route::get('/SoftwareDev/allJobs/{category}','App\Http\Controllers\homePage@CategoryJobs');
+Route::get('/SoftwareDev/allJobs/{category}', 'App\Http\Controllers\homePage@CategoryJobs');
 
+//Job Details 
+Route::get('/JobsDetails', 'App\Http\Controllers\specificUserJobData@JobsDetails');
+Route::get('/appliedJobDescription/{postId}', 'App\Http\Controllers\specificUserJobData@Descriptoin');
+Route::get('/deleteAppliedJob/{applyId}', 'App\Http\Controllers\specificUserJobData@DeleteJobApply');
 
-//Search by category on index page
-Route::get('/JobsDetails','App\Http\Controllers\specificUserJobData@JobsDetails');
-Route::get('/appliedJobDescription/{postId}','App\Http\Controllers\specificUserJobData@Descriptoin');
-Route::get('/deleteAppliedJob/{applyId}','App\Http\Controllers\specificUserJobData@DeleteJobApply');
+Route::get('/postJobDescription/{postId}', 'App\Http\Controllers\specificUserJobData@postJobDescription');
+Route::get('/postJobdelete/{postId}', 'App\Http\Controllers\specificUserJobData@DeleteJobPost');
 
-Route::get('/postJobDescription/{postId}','App\Http\Controllers\specificUserJobData@postJobDescription');
-Route::get('/postJobdelete/{postId}','App\Http\Controllers\specificUserJobData@DeleteJobPost');
-
-Route::get('/offerJobDescription/{applyId}','App\Http\Controllers\specificUserJobData@offerJobDescription');
-Route::get('/deleteoffer/{applyId}','App\Http\Controllers\specificUserJobData@DeleteJoboffers');
-
+Route::get('/offerJobDescription/{applyId}', 'App\Http\Controllers\specificUserJobData@offerJobDescription');
+Route::get('/deleteoffer/{applyId}', 'App\Http\Controllers\specificUserJobData@DeleteJoboffers');
 
 ///Search
-Route::POST('/Search','App\Http\Controllers\Searching@searchCandidate');
-Route::get('/ViewProfile/{userId}','App\Http\Controllers\Searching@ViewProfile');
-
-
+Route::POST('/Search', 'App\Http\Controllers\Searching@searchCandidate');
+Route::get('/ViewProfile/{userId}', 'App\Http\Controllers\Searching@ViewProfile');
 
 //LOGOUT
-Route::get('/logout','App\Http\Controllers\userControl@logout');
-
-
+Route::get('/logout', 'App\Http\Controllers\userControl@logout');

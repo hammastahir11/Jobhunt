@@ -26,6 +26,9 @@ class apply extends Controller
         if (Request::input('fname') == null) {
             return view('JobApply', ['error' => 'Please Fill first Name']);
         }
+        if (Session::get('userId')->userId == NULL) {
+            return view('JobApply', ['error' => 'Please Login First']);
+        }
         if (Request::input('email') == null) {
             return view('JobApply', ['error' => 'Please Fill Email']);
         }

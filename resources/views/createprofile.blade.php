@@ -20,16 +20,20 @@
         <!-- progressbar -->
         @if($userData!=NULL)
         <ul id="progressbar">
-
+            
             <li class="active">Personal Details</li>
             <li>Contact Infromation</li>
             {{-- <li>Work Experience</li> --}}
-
-
+            
+            
         </ul>
         <!-- fieldsets -->
         <fieldset>
             <h2 class="fs-title">Personal Details</h2>
+            @isset($error)
+            <label for="error" style="color:rgb(255, 255, 255); background:rgb(150, 10, 10);padding:8px"
+                class='submit-btn'><b style="width:100%; text-align: center;">{!!$error!!}</b></label>
+            @endisset
             <h3 class="fs-subtitle"></h3>
 
             <input type="text" name="field" placeholder="Field" value="{{$userData->profession}} " />

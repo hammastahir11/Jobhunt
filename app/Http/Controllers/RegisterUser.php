@@ -55,14 +55,25 @@ class RegisterUser extends Controller
         if ($givenData != null) {
             $user_info = $user_info->toArray();
             // DB::table('userinfo')->where('iD',$id)->update(['userId'=>$user_info->userId,'gender'=>$user_info->gender,'aboutUser'=>$user_info->aboutUser,'profession'=>$user_info->profession,'dateOfBirth'=>$user_info->dateOfBirth,'city'=>$user_info->city,'country'=>$user_info->country,'phoneNumber'=>$user_info->phoneNumber]);
-            DB::table('userinfo')->where('iD', $givenData->iD)->update($user_info);
+            DB::table('userinfo')->where('iD', $givenData->iD)->update($user_info); 
+            $id = Session::get('userId')->userId;
+            $givenData = DB::table('userinfo')->where('userinfo.userId', $id)->get()->first();
+            //return $givenData;
+            return view('createprofile', ['userData' => $givenData,'error'=>'Record Updated Successfully']);
+       
+            
 
         } else {
 
             $user_info->save();
+            $id = Session::get('userId')->userId;
+            $givenData = DB::table('userinfo')->where('userinfo.userId', $id)->get()->first();
+            //return $givenData;
+            return view('createprofile', ['userData' => $givenData,'error'=>'Record Added Successfully']);
+           
         }
 
-        return redirect('editprofile');
+       
     }
 
     //Register a new User on Job Hunt
