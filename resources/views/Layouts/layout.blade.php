@@ -77,7 +77,7 @@
                       <a class="drop" href="/editprofile" >Edit Profile</a>
                       </li>
                       <li>
-                      <a class="drop" href="/userprofile" >View Profile</a>
+                      <a class="drop" href="/viewProfile" >View Profile</a>
                       </li>
                       <li>
                       <a class="drop" href="/JobsDetails" >Jobs</a>

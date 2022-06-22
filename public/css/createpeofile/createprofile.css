@@ -52,7 +52,7 @@ body {
   display: none;
 }
 
-#multistepsform input,
+#multistepsform input,#multistepsform select,
 #multistepsform textarea {
   padding: 15px;
   border: 1px solid #ccc;

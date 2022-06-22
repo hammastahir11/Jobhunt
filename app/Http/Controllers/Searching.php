@@ -29,4 +29,10 @@ class Searching extends Controller
         //$candidates = user_profiles::where('user_profile.fName',$searchData)->get();
         //First Complete the user_Profile Page then I will do any other thing
     }
+
+    public function ViewProfile($id){
+        $candidate = DB::table('user_profiles')->join('userinfo','userinfo.userId','=','user_profiles.userId')->where('user_profiles.userId',$id)->get()->first();
+        //return $candidate;
+        return view('userprofile',['userData'=>$candidate]);
+    }
 }

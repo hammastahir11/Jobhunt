@@ -53,9 +53,9 @@ Route::get('/userprofile', function () {
 Route::get(('login'), function () {
     return view('login');
 });
-Route::get(('/editprofile'), function () {
-    return view('createprofile');
-});
+// Route::get(('/editprofile'), function () {
+//     return view('createprofile');
+// });
 
 
 Route::get(('menu'), function () {
@@ -71,7 +71,12 @@ Route::get(('menu'), function () {
 //////////////
 Route::post('/register','App\Http\Controllers\RegisterUser@store');
 Route::post('/login','App\Http\Controllers\RegisterUser@LoginUser');
-Route::post('/editprofile','App\Http\Controllers\RegisterUser@createProfile');
+Route::post('/saveProfile','App\Http\Controllers\RegisterUser@createProfile');
+Route::get('/viewProfile','App\Http\Controllers\RegisterUser@ViewProfile');
+
+Route::get('/editprofile','App\Http\Controllers\RegisterUser@updateProfile');
+
+
 
 //ApplyJob
 Route::post('/apply','App\Http\Controllers\apply@store');
@@ -107,6 +112,8 @@ Route::get('/deleteoffer/{applyId}','App\Http\Controllers\specificUserJobData@De
 
 ///Search
 Route::POST('/Search','App\Http\Controllers\Searching@searchCandidate');
+Route::get('/ViewProfile/{userId}','App\Http\Controllers\Searching@ViewProfile');
+
 
 
 //LOGOUT

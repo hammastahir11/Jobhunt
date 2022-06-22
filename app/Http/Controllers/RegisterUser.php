@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Models\user_profile;
+use App\Http\Controllers\RegisterUser;
+use App\Http\Controllers\userControl;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use App\Models\userinfo;
 use App\Models\postjob;
 use Session;
@@ -13,19 +18,60 @@ use Session;
 class RegisterUser extends Controller
 {
 
+    public function ViewProfile(){
+        $id = Session::get('userId')->userId;
+        $candidate = DB::table('user_profiles')->join('userinfo','userinfo.userId','=','user_profiles.userId')->where('user_profiles.userId',$id)->get()->first();
+        //return $candidate;
+        return view('userprofile',['userData'=>$candidate]);
+    }
+
+
+    public function updateProfile(){
+        $id=Session::get('userId')->userId;
+        $givenData=DB::table('userinfo')->where('userinfo.userId',$id)->get()->first();
+        //return $givenData;
+        return view('createprofile',['userData'=>$givenData]);
+        //
+    }
+
    public function createProfile(){
+    $id=Session::get('userId')->userId;
+    $givenData=DB::table('userinfo')->where('userinfo.userId',$id)->get()->first();
+
+    if($givenData!=Null){
+        $user_info=userinfo::find($givenData->iD);
+    }
+    else{
+        
         $user_info = new userinfo();
+    }
+
+
         $user_info->userId=Session::get('userId')->userId;
+        $user_info->gender = Request::input('Gender');
+        $user_info->aboutUser = Request::input('personalInfo');
         $user_info->profession = Request::input('field');
         $user_info->dateOfBirth = Request::input('dob');
         $user_info->city = Request::input('city');
         $user_info->country = Request::input('country');
         $user_info->phoneNumber = Request::input('phone');
-        //$user_info->portfolioSite = Request::input('website');
-        //$user_info->Address = Request::input('address');
-        $user_info->save();
+        $user_info->portfolioSite = Request::input('website');
+        if($givenData!=Null){
+            $user_info=$user_info->toArray();
+            // DB::table('userinfo')->where('iD',$id)->update(['userId'=>$user_info->userId,'gender'=>$user_info->gender,'aboutUser'=>$user_info->aboutUser,'profession'=>$user_info->profession,'dateOfBirth'=>$user_info->dateOfBirth,'city'=>$user_info->city,'country'=>$user_info->country,'phoneNumber'=>$user_info->phoneNumber]);
+            DB::table('userinfo')->where('iD',$givenData->iD)->update($user_info);
+            
+        }
+        else{
+            
+            
+            $user_info->save();
+        }
+    
         return redirect('editprofile');
    }
+
+
 
     //Register a new User on Job Hunt
     public function store(){

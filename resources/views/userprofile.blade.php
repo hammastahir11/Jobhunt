@@ -29,11 +29,22 @@
 
         <section class="work_skills card">
             <div class="work">
-                <h1 class="heading">work</h1>
+                <h1 class="heading">About</h1>
                 <div class="primary">
-                    <h1>Animation</h1>
-                    <span>Primary</span>
-                    <p>170  Street <br> Hostel City Islamabad</p>
+                    
+                    
+                    <h1>@if($userData!=NULL){{$userData->aboutUser}}@endif</h1>
+                </div>
+
+               
+            </div>
+
+            <div class="work">
+                <h1 class="heading">Work</h1>
+                <div class="primary">
+                    
+                    
+                   
                 </div>
 
                 <div class="secondary">
@@ -59,12 +70,12 @@
         <!-- ===== ===== User Details Sections ===== ===== -->
         <section class="userDetails card">
             <div class="userName">
-                <h1 class="name">Hammas Tahir</h1>
+                <h1 class="name">@if($userData!=NULL){{$userData->fName}} &nbsp; {{$userData->lName}}@endif</h1>
                 <div class="map">
                     <i class="ri-map-pin-fill ri"></i>
-                    <span>Islamabad, Pakistan</span>
+                    <span>@if($userData!=NULL){{$userData->city}}, &nbsp; {{$userData->country}}@endif</span>
                 </div>
-                <p>Web Designer</p>
+                <p>@if($userData!=NULL){{$userData->profession}}@endif</p>
             </div>
 
             <div class="rank">
@@ -83,7 +94,7 @@
                 <ul>
                     <li class="sendMsg">
                         <i class="ri-chat-4-fill ri"></i>
-                        <a href="Chat.html">Send Message</a>
+                        <a href="/chat">Send Message</a>
                     </li>
 
                     <!-- <li class="sendMsg active">
@@ -91,9 +102,7 @@
                         <a href="#">Contacts</a>
                     </li> -->
 
-                    <li class="sendMsg">
-                        <a href="#">Report User</a>
-                    </li>
+                    
                 </ul>
             </div>
         </section>
@@ -107,10 +116,10 @@
                         <i class="ri-user-3-fill ri"></i>
                         <span>About</span>
                     </li>
-                    <li class="timeline">
+                    {{-- <li class="timeline">
                         <i class="ri-eye-fill ri"></i>
                         <span>Timeline</span>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
 
@@ -119,22 +128,22 @@
                 <ul>
                     <li class="phone">
                         <h1 class="label">Phone:</h1>
-                        <span class="info">+91 234 567 890</span>
+                        <span class="info">@if($userData!=NULL){{$userData->phoneNumber}}@endif</span>
                     </li>
 
                     <li class="address">
                         <h1 class="label">Address:</h1>
-                        <span class="info">6th Street <br> Hostel City Islamabad</span>
+                        <span class="info">@if($userData!=NULL){{$userData->city}}<br> {{$userData->country}}@endif</span>
                     </li>
 
                     <li class="email">
                         <h1 class="label">E-mail:</h1>
-                        <span class="info">hammastahir11@gmail.com</span>
+                        <span class="info">@if($userData!=NULL){{$userData->emailId}}@endif</span>
                     </li>
 
                     <li class="site">
                         <h1 class="label">Site:</h1>
-                        <span class="info">www.Dummy.com</span>
+                        <span class="info">@if($userData!=NULL){{$userData->portfolioSite}}@endif</span>
                     </li>
                 </ul>
             </div>
@@ -144,12 +153,12 @@
                 <ul>
                     <li class="birthday">
                         <h1 class="label">Birthday:</h1>
-                        <span class="info">Dec 25, 2000</span>
+                        <span class="info">@if($userData!=NULL){{$userData->dateOfBirth}}@endif</span>
                     </li>
 
                     <li class="sex">
                         <h1 class="label">Gender:</h1>
-                        <span class="info">Male</span>
+                        <span class="info">@if($userData!=NULL){{$userData->gender}}@endif</span>
                     </li>
                 </ul>
             </div>

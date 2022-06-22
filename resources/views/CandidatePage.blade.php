@@ -34,6 +34,9 @@
               @foreach($candidates as $candidate)
               <div class="row">
                 <div class="col">
+                  <button type="button" class="btn px-5 btn-primary  "><a class="anchorTag" href="/chat/{{$candidate->userId}}">Chat</a></button>
+                    <button type="button" class="btn px-5 btn-primary"><a class="anchorTag" href="/ViewProfile/{{$candidate->userId}}">View Profile</a></button>
+                  
                   <h6 style="color: #89ba16" >2 year experience</h6>
                   <h2>{{$candidate->fName}}  {{$candidate->lName}}  </h2>
                   <span>{{$candidate->profession}}</span>
@@ -42,7 +45,7 @@
                 <div
                   class="col align-items-center text-end d-flex align-items-center justify-content-md-end"
                 >
-                  <button type="button" class="btn px-5 btn-primary"><a class="anchorTag" href="/chat/{{$candidate->userId}}">Chat</a></button>
+                  
                 </div>
               </div>
               @endforeach

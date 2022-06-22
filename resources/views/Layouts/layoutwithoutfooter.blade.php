@@ -52,19 +52,19 @@
                     <div class="dd_right">
                       <ul>
                       <li>
-                      <a class="drop" href="editprofile" >Edit Profile</a>
+                      <a class="drop" href="/editprofile" >Edit Profile</a>
                       </li>
                       <li>
-                      <a class="drop" href="userprofile" >View Profile</a>
+                      <a class="drop" href="/viewProfile" >View Profile</a>
                       </li>
                       <li>
-                      <a class="drop" href="JobsDetails" >Jobs</a>
+                      <a class="drop" href="/JobsDetails" >Jobs</a>
                       </li>
                       <li>
-                      <a class="drop" href="CreateJob" >Create Jobs</a>
+                      <a class="drop" href="/CreateJob" >Create Jobs</a>
                       </li>
                       <li>
-                      <a class="drop" href="#" >Logout</a>
+                      <a class="drop" href="/logout"  >Logout</a>
                       </li>
                       </ul>
                     </div>
