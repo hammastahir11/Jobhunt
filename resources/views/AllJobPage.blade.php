@@ -17,75 +17,75 @@
     @extends('Layouts.layout')
     @section('content')
 
-        <!-- Copy of Linked In -->
-        <!-- All jobs -->
-        <div class="container">
-            <div class="row w-100 justify-content-around">
+    <!-- Copy of Linked In -->
+    <!-- All jobs -->
+    <div class="container">
+        <div class="row w-100 justify-content-around">
 
 
-                <!-- Jobs list -->
-                <div class="col-lg-5 my-2 shadow-lg rounded border ">
-                    <h6 style="color: #89ba16;">Recently Added Jobs</h6>
-                    {{-- <h6><a class="anchorTag" style="color: black;" href="index.html">Home Page</a></h6> --}}
+            <!-- Jobs list -->
+            <div class="col-lg-5 my-2 shadow-lg rounded border ">
+                <h6 style="color: #89ba16;">Recently Added Jobs</h6>
+                {{-- <h6><a class="anchorTag" style="color: black;" href="index.html">Home Page</a></h6> --}}
 
-                    <!--Left Side List of Jobs-->
+                <!--Left Side List of Jobs-->
 
-                    <div class="row text-start">
-                        <div class="col-12 p-2 ScrollingJobs my-2 bgcolorp" id="kashif">
+                <div class="row text-start">
+                    <div class="col-12 p-2 ScrollingJobs my-2 bgcolorp" id="kashif">
 
-                            @foreach ($jobs as $job)
-                                <div class="col-lg-6 p-2 w-100 JobListItem bg-white rounded my-3">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h6 style="color: #89ba16">{{ $job->EmploymentType }}</h6>
-                                            <h4><b>{{ $job->Title }}</b></h4>
-                                            <span><b>Company:</b> {{ $job->CompanyName }}</span>
-                                        </div>
-                                        <div
-                                            class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
-                                            <a href="/jobdescription/{{ $job->postId }}"
-                                                class="btn btn-primary">Detail</a>
-                                            {{-- <button type="button" class="btn btn-primary"><a class="anchorTag" href="JobApply.html">Apply</a></button> --}}
-                                        </div>
-                                    </div>
-
+                        @foreach ($jobs as $job)
+                        <div class="col-lg-6 p-2 w-100 JobListItem bg-white rounded my-3">
+                            <div class="row">
+                                <div class="col">
+                                    <h6 style="color: #89ba16">{{ $job->EmploymentType }}</h6>
+                                    <h4><b>{{ $job->Title }}</b></h4>
+                                    <span><b>Company:</b> {{ $job->CompanyName }}</span>
                                 </div>
-                            @endforeach
-
+                                <div
+                                    class="col align-items-center text-end d-flex align-items-center justify-content-md-end">
+                                    <a href="/jobdescription/{{ $job->postId }}" class="btn btn-primary">Detail</a>
+                                    {{-- <button type="button" class="btn btn-primary"><a class="anchorTag"
+                                            href="JobApply.html">Apply</a></button> --}}
+                                </div>
+                            </div>
 
                         </div>
-                    </div>
-                </div>
+                        @endforeach
 
 
-
-
-
-                <!-- instructions -->
-
-                <div class="col-lg-6 shadow-lg rounded border my-2">
-                    <h6 style="color: #89ba16">Job Description</h6>
-                    @if (Session::get('userId') != null)
-                        @if ($jobDes != null)
-                            <a href="/jobapply" class="btn btn-primary ">apply</a>
-                        @endif
-                    @endif
-                    <div class="ScrollingJobs position-static">
-                        @if ($jobDes != null)
-                            <h2> {{ $jobDes->Title }}</h2>
-                            <i class="bi bi-bag-fill h6"> {{ $jobDes->WorkPlace }}</i><br>
-                            <i class="bi bi-building h6">{{ $jobDes->JobLocation }}</i>
-                            <br>
-
-                            <div>
-                                <div>{!! $jobDes->JobDescription !!}</div>
-                            </div>
-                        @endif
                     </div>
                 </div>
             </div>
 
+
+
+
+
+            <!-- instructions -->
+
+            <div class="col-lg-6 shadow-lg rounded border my-2">
+                <h6 style="color: #89ba16">Job Description</h6>
+                @if (Session::get('userId') != null)
+                @if ($jobDes != null)
+                <a href="/jobapply" class="btn btn-primary ">apply</a>
+                @endif
+                @endif
+                <div class="ScrollingJobs position-static">
+                    @if ($jobDes != null)
+                    <h2> {{ $jobDes->Title }}</h2>
+                    <i class="bi bi-bag-fill h6"> {{ $jobDes->WorkPlace }}</i><br>
+                    <i class="bi bi-building h6">{{ $jobDes->JobLocation }}</i>
+                    <br>
+
+                    <div>
+                        <div>{!! $jobDes->JobDescription !!}</div>
+                    </div>
+                    @endif
+                </div>
+            </div>
         </div>
+
+    </div>
 
 
 

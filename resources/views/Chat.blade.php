@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +27,7 @@
 </head>
 @extends('Layouts.layoutwithoutfooter')
 @section('content')
+
 <body>
     <div class="container">
         <div class="row w-100 no-gutters">
@@ -208,7 +210,6 @@
 
 
     <script>
-
         $('.friend-drawer--onhover').on('click', function () {
 
             $('.chat-bubble').hide('slow').show('slow');
@@ -218,8 +219,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
 </body>
 

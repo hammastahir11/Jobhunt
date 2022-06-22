@@ -8,7 +8,7 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{{URL::asset('css/index/index.css')}}"/>
+  <link rel="stylesheet" href="{{URL::asset('css/index/index.css')}}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
@@ -40,7 +40,7 @@
 
   <!--BODY OF PAGE-->
 
-  
+
   <div style="background-image: url('css/index/bgHomeImage.jpg'); background-size: cover" class="bcolor">
     <div class="py-5 text-center pcolor bgcolor">
       <p>Find Job, Employment, and Career Opportunities</p>
@@ -83,14 +83,15 @@
 
             </i> -->
 
-            <form action="/Search" method="POST">
-              @csrf
-          <input type="text" name="SearchField" id="SearchBox" class="shadow rounded workSearch" placeholder="   i:e Graphic Designer" />
-  
+        <form action="/Search" method="POST">
+          @csrf
+          <input type="text" name="SearchField" id="SearchBox" class="shadow rounded workSearch"
+            placeholder="   i:e Graphic Designer" />
+
           <button type="submit" id="SearchCandidate" class="btnset shadow rounded">
             Search Candidate
           </button>
-  
+
           {{-- <button type="submit" class="btnset shadow rounded">
             &nbsp;&nbsp;&nbsp;Search Job&nbsp; &nbsp;&nbsp;
           </button> --}}
@@ -112,23 +113,23 @@
           <div class="">
             <h4>Graphic Designer</h4>
             <i class="bi bi-palette fa-4x"></i>
-            
+
           </div>
         </a>
 
-          <a href="/SoftwareDev/allJobs/{{'Training and Education'}}" class="CategoryJobOpen rounded col-lg-2">
+        <a href="/SoftwareDev/allJobs/{{'Training and Education'}}" class="CategoryJobOpen rounded col-lg-2">
           <div class="">
             <h4>Training and Education</h4>
             <i class="bi bi-book-half fa-4x"></i>
-            
+
           </div>
         </a>
 
-    <a href="/SoftwareDev/allJobs/{{'Software Developer'}}" class="CategoryJobOpen rounded col-lg-2">
+        <a href="/SoftwareDev/allJobs/{{'Software Developer'}}" class="CategoryJobOpen rounded col-lg-2">
           <div class="">
             <h4>Website & Coder</h4>
             <i class="bi bi-journal-code fa-4x"></i>
-            
+
           </div>
         </a>
 
@@ -136,7 +137,7 @@
           <div class="">
             <h4>Account & Finance</h4>
             <i class="bi bi-calculator-fill fa-4x"></i>
-            
+
           </div>
         </a>
 
@@ -144,7 +145,7 @@
           <div class="">
             <h4>Resturant & Food</h4>
             <i class="bi bi-egg-fried fa-4x"></i>
-            
+
           </div>
         </a>
 
@@ -152,7 +153,7 @@
           <div class="">
             <h4>Health & Hospital</h4>
             <i class="bi bi-palette fa-4x"></i>
-            
+
           </div>
         </a>
       </div>
@@ -343,8 +344,8 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
 

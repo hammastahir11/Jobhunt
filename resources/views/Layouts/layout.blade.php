@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="{{URL::asset('css/layout/menu.css')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <script>
     $(document).ready(function(){
@@ -23,93 +22,93 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 
-<!--font awesome-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-<!--Bootstrap-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-<link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
-<!--Bootstrap-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
 
-  
+
   <title>Job Hunt</title>
 </head>
+
 <body class="antialiased">
-<header>
+  <header>
     <nav class="navi">
-      <label >
+      <label>
         <a class="logo" style="text-decoration: none; 
                               font-size: 30px;
                               font-weight: bold;
                               color: white;
                               padding: 0 20px;
-                              line-height: 70px;"
-     href="/">JOB HUNT</a>
+                              line-height: 70px;" href="/">JOB HUNT</a>
       </label>
 
       @if(Session::get('userId')!=NULL)
-      <ul class="profile" >
-                <li class="nr_li dd_main">
-                  <img src="css/layout/profile.jpeg" alt="profile_img">
-                  
-                  <div class="dd_menu"  >
-                    
-                    <div class="dd_left">
-                      <ul>
-                        <li><i  class="fas fa-cog"></i></li>
-                        <li><i class="fas fa-download"></i></li>
-                        <li><i class="fas fa-sign-out-alt"></i></li>
-                      </ul>
-                    </div>
-                    <div class="dd_right">
-                      <ul>
-                      <li>
-                      <a class="drop" href="/editprofile" >Edit Profile</a>
-                      </li>
-                      <li>
-                      <a class="drop" href="/viewProfile" >View Profile</a>
-                      </li>
-                      <li>
-                      <a class="drop" href="/JobsDetails" >Jobs</a>
-                      </li>
-                      <li>
-                      <a class="drop" href="/CreateJob" >Create Jobs</a>
-                      </li>
-                      
-                      <li>
-                      <a class="drop" href="/logout" >Logout</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </ul>
-              @endif
+      <ul class="profile">
+        <li class="nr_li dd_main">
+          <img src="css/layout/profile.jpeg" alt="profile_img">
 
-       <ul class="ull">
+          <div class="dd_menu">
+
+            <div class="dd_left">
+              <ul>
+                <li><i class="fas fa-cog"></i></li>
+                <li><i class="fas fa-download"></i></li>
+                <li><i class="fas fa-sign-out-alt"></i></li>
+              </ul>
+            </div>
+            <div class="dd_right">
+              <ul>
+                <li>
+                  <a class="drop" href="/editprofile">Edit Profile</a>
+                </li>
+                <li>
+                  <a class="drop" href="/viewProfile">View Profile</a>
+                </li>
+                <li>
+                  <a class="drop" href="/JobsDetails">Jobs</a>
+                </li>
+                <li>
+                  <a class="drop" href="/CreateJob">Create Jobs</a>
+                </li>
+
+                <li>
+                  <a class="drop" href="/logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </ul>
+      @endif
+
+      <ul class="ull">
         <li class="lii">
           <a class="menuheader" href="/allJobs">All Jobs</a>
         </li>
         <li class="lii">
-          <a class="menuheader"href="/chat">chat</a>
+          <a class="menuheader" href="/chat">chat</a>
         </li>
         @if(Session::get('userId')==NULL)
         <li class="lii">
           <a class="menuheader" href="/login">Sign In</a>
-        </li> 
+        </li>
         @endif
-      </ul>     
+      </ul>
       <label class="label" id="icon">
-        <i class="fa fa-bars"></i> 
+        <i class="fa fa-bars"></i>
       </label>
 
     </nav>
@@ -243,7 +242,7 @@
 
 
 
-<!-- Footer End -->
+  <!-- Footer End -->
 
 
 
@@ -254,7 +253,7 @@
 
 
   <script>
-	var dd_main = document.querySelector(".dd_main");
+    var dd_main = document.querySelector(".dd_main");
 	dd_main.addEventListener("click", function(){
 		this.classList.toggle("active");
 	});
@@ -273,11 +272,12 @@
 
 
 
-</script>
-
-  
+  </script>
 
 
-  
+
+
+
 </body>
+
 </html>
