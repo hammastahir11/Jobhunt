@@ -93,7 +93,7 @@
             </div>
             <br>
             
-            <input type="button"  class="add_field_button action-button" value="Add Experience" />
+            <input type="button"  class="add_field_button action-button" value="Add Education" />
             <br>
             <input type="button" name="previous" class="previous action-button" value="Previous" />
             <input type="submit" name="submit" class="action-button" value="Submit" />
