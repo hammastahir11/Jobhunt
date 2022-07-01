@@ -21,12 +21,23 @@
 
 
     <div>
+        
         <span class="main_bg"></span>
         <div class="container">
             <section class="userProfile card">
                 <div class="profile">
-                    <figure><img src="profile.jpeg" alt="profile" width="250px" height="250px"></figure>
-                </div>
+                @if($userData!=Null)
+                @if($userData->profilePic!=Null)
+               
+                <figure><img src="..\{{$userData->profilePic}}" alt="profile" width="250px" height="250px"></figure>
+                @endif
+                @endif
+
+                @if($userData==Null)
+                
+                <figure><img src="{{Images/DummyImages/dummyProfileImage.png}}" width="250px" height="250px"></figure>
+                @endif
+            </div>
             </section>
 
             <section class="work_skills card">

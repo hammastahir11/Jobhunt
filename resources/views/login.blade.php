@@ -49,6 +49,7 @@
                     @csrf
                     <input type='text' class='input-field' name='fName' placeholder='First Name' required>
                     <input type='text' class='input-field' name='lName' placeholder='Last Name ' required>
+                    
                     <input type='email' class=' input-field' name='emailId' placeholder='Email Id' required>
                     <input type='text' name='password' class='input-field' placeholder='Enter Password' required>
                     <input type='password' name="text1" name='confirmPassword' class='input-field'

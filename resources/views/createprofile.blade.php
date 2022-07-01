@@ -15,7 +15,7 @@
 
 <body>
     <span class="main_bg"></span>
-    <form id="multistepsform" action="/saveProfile" method="POST">
+    <form id="multistepsform" action="/saveProfile" method="POST" enctype="multipart/form-data">
         @csrf
         <!-- progressbar -->
         @if($userData!=NULL)
@@ -51,8 +51,9 @@
         <fieldset>
             <h2 class="fs-title">Contact Infromation</h2>
 
-            <label for="formFile" class="form-label">Select Resume</label>
-            <input class="form-control" type="file" id="formFile">
+            <label for="formFile" class="form-label">Profile Image</label>
+            
+            <input  name="pic" type="file" value='{!!$userData->profilePic!!}' id="formFile">
             <input type="text" name="phone" placeholder="Phone" value="{{$userData->phoneNumber}}" />
             <input type="website" name="website" placeholder="Website" value="{{$userData->portfolioSite}}" />
             <textarea name="personalInfo" placeholder="About You">{{$userData->aboutUser}}</textarea>
@@ -61,21 +62,7 @@
             <input type="submit" name="submit" class=" action-button" value="Submit" />
             {{-- <input type="button" name="next" class="next action-button" value="Next" /> --}}
         </fieldset>
-        <fieldset>
-            <h2 class="fs-title">Work Experience</h2>
-            <h3 class="fs-subtitle">Experience</h3>
-            <div class="input_fields_wrap">
-                <h3 class="fs-subtitle"></h3>
-                <div><input type="text" name="jname" placeholder="Job Name" /></div>
-                <div><input type="text" name="cname" placeholder="Company Name" /></div>
-                <div><textarea name="caddress" placeholder="Address"></textarea></div>
-            </div>
-            <br>
-            <!-- <button class="add_field_button">Add More Experience</button>  -->
-            <input type="button" class="add_field_button action-button" value="Add Experience" />
-            <br>
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
-        </fieldset>
+        
         @endif
 
         @if($userData==NULL)
@@ -106,8 +93,9 @@
         <fieldset>
             <h2 class="fs-title">Contact Infromation</h2>
 
-            <label for="formFile" class="form-label">Select Resume</label>
-            <input class="form-control" type="file" id="formFile">
+            <label for="formFile" class="form-label">Profile Image</label>
+            <input type='file'  name='pic'>
+            {{-- <input class="form-control" name="picture" type="file" id="formFile"> --}}
             <input type="text" name="phone" placeholder="Phone" value="" />
             <input type="website" name="website" placeholder="Website" />
             <textarea name="personalInfo" placeholder="About You" value=""></textarea>
@@ -116,7 +104,7 @@
             <input type="submit" name="submit" class=" action-button" value="Submit" />
             {{-- <input type="button" name="next" class="next action-button" value="Next" /> --}}
         </fieldset>
-        <fieldset>
+        {{-- <fieldset>
             <h2 class="fs-title">Work Experience</h2>
             <h3 class="fs-subtitle">Experience</h3>
             <div class="input_fields_wrap">
@@ -130,7 +118,7 @@
             <input type="button" class="add_field_button action-button" value="Add Experience" />
             <br>
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-        </fieldset>
+        </fieldset> --}}
         @endif
     </form>
 

@@ -92,6 +92,8 @@ Route::get('/deleteoffer/{applyId}', 'App\Http\Controllers\specificUserJobData@D
 ///Search
 Route::POST('/Search', 'App\Http\Controllers\Searching@searchCandidate');
 Route::get('/ViewProfile/{userId}', 'App\Http\Controllers\Searching@ViewProfile');
+//DOWNLOAD CV
+Route::get('/downloadImage/{userId}', 'App\Http\Controllers\specificUserJobData@downloadcv');
 
 //LOGOUT
 Route::get('/logout', 'App\Http\Controllers\userControl@logout');

@@ -31,14 +31,13 @@
                     style="color:rgb(255, 255, 255); text-align: center; background:rgb(150, 10, 10);padding:8px"
                     class='submit-btn'><b>{!!$error!!}</b></label>
                 @endisset
-                <form action="/apply" method="POST">
+                <form action="/apply" enctype="multipart/form-data" method="POST">
                     @csrf
                     <input type="text" name="fname" placeholder="Full Name" class="w-50 border p-1 m-3 rounded">
                     <input type="text" name="email" placeholder="Email" class="w-50 border p-1 m-3 rounded">
                     <input type="text" name="pNumber" placeholder="Phone Number" class="w-50 border p-1 m-3 rounded">
                     <label for="Resume" class="w-50 border-0 p-1 m-3 rounded">Upload .pdf/.docx Resume file </label>
-                    <input type="file" name="resume" id="Resume" placeholder="Choose Resume"
-                        class="w-50 border p-1 m-3 rounded"><br>
+                    <input type="file" name="resume" id="Resume"  class="w-50 border p-1 m-3 rounded"><br>
                     <button type="submit" class="btn bg-warning text-light">Apply</button>
                 </form>
             </div>

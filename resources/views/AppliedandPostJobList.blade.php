@@ -71,6 +71,7 @@
                                     styel="text-decoration: none;">Delete</a>
                                 <a href="/appliedJobDescription/{{$data->postId}}" class="btn bg-primary"
                                     styel="text-decoration: none;">Description</a>
+                                    
 
                                 <h6 style="color: #89ba16">{{$data->EmploymentType}}</h6>
                                 <h5>{{$data->Title}}</h5>
@@ -219,6 +220,9 @@
                                     styel="text-decoration: none;">Description</a>
                                 <a href="/Chat/{{$offers->userId}}" class="btn bg-primary"
                                     styel="text-decoration: none;">Chat</a>
+                                
+                                <a href="/downloadImage/{{$offers->applyId}}" class="btn bg-primary"
+                                        styel="text-decoration: none;">Download Image</a>
 
                                 <h6 style="color: #89ba16">{{$offers->emailId}}</h6>
                                 <h5>{{$offers->fName}}</h5>

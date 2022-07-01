@@ -27,6 +27,7 @@ class Searching extends Controller
     {
         $candidate = DB::table('user_profiles')->join('userinfo', 'userinfo.userId', '=', 'user_profiles.userId')->where('user_profiles.userId', $id)->get()->first();
         //return $candidate;
+        
         return view('userprofile', ['userData' => $candidate]);
     }
 }

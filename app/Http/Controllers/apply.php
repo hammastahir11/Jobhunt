@@ -35,14 +35,26 @@ class apply extends Controller
         if (Request::input('pNumber') == null) {
             return view('JobApply', ['error' => 'Please write Phone Number']);
         }
-        // if(Request::input('resume')==NULL){
-        //     return view('JobApply',['error'=>'Please Attach File']);
-        // }
+        $resume = Request::file('resume');
+        if($resume==NULL){
+            return view('JobApply',['error'=>'Please Attach File']);
+        }
+
+        $resume = Request::file('resume');
+        
+        if ($resume !== null) {
+            $resume = Request::file('resume');
+            $resumeName = $resume->getClientOriginalName();
+            
+            $resume->move('AppilcantCV/', $resumeName);
+            $destination = 'AppilcantCV/' . $resumeName;
+            $apply->file = $destination;
+        }
         $apply->fullName = Request::input('fname');
 
         $apply->emailId = Request::input('email');
         $apply->phoneNumber = Request::input('pNumber');
-        $file = Request::input('resume');
+        
         $apply->save();
 
         $jobData = postjob::all();

@@ -9,6 +9,7 @@ use App\Models\user_profile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Request;
+
 use Session;
 
 class RegisterUser extends Controller
@@ -31,8 +32,9 @@ class RegisterUser extends Controller
         //
     }
 
-    public function createProfile()
+    public function createProfile(Request $request)
     {
+        
         $id = Session::get('userId')->userId;
         $givenData = DB::table('userinfo')->where('userinfo.userId', $id)->get()->first();
 
@@ -52,6 +54,19 @@ class RegisterUser extends Controller
         $user_info->country = Request::input('country');
         $user_info->phoneNumber = Request::input('phone');
         $user_info->portfolioSite = Request::input('website');
+        $pics =  Request::file('pic');
+        
+        
+        
+        if ($pics !== null) {
+            $pics = Request::file('pic');
+            $picName = $pics->getClientOriginalName();
+            
+            $pics->move('Images/', $picName);
+            $destination = 'Images/' . $picName;
+            $user_info->profilePic = $destination;
+        }
+        
         if ($givenData != null) {
             $user_info = $user_info->toArray();
             // DB::table('userinfo')->where('iD',$id)->update(['userId'=>$user_info->userId,'gender'=>$user_info->gender,'aboutUser'=>$user_info->aboutUser,'profession'=>$user_info->profession,'dateOfBirth'=>$user_info->dateOfBirth,'city'=>$user_info->city,'country'=>$user_info->country,'phoneNumber'=>$user_info->phoneNumber]);
@@ -88,16 +103,18 @@ class RegisterUser extends Controller
 //Image Upload
 
         $pic = Request::file('pic');
+        return $pic;
         error_log($pic);
         if ($pic !== null) {
-
+            $pic = Request::file('pic');
             $picName = $pic->getClientOriginalName();
+            //$path = $pic->store('public/images');;
 
-            $picType = $pic->getClientOriginalExtension();
+            //$picType = $pic->getClientOriginalExtension();
 
-            $picSize = $pic->getSize();
-            $pic->move('uploads', $picName);
-            $destination = 'uploads/' . $picName;
+            //$picSize = $pic->getSize();
+            $pic->move('Images/', $picName);
+            $destination = 'images/' . $picName;
             $user->pic = $destination;
         }
         $user->password = (Request::input('password'));
@@ -111,10 +128,14 @@ class RegisterUser extends Controller
         $emailId = Request::input('emailId');
         $data = user_profile::where('emailId', $emailId)->get()->first();
 
+
         Session::pull('userId');
         if ($data != null) {
-
+            
             Session::put('userId', $data);
+
+           
+        
             $password = Request::input('password');
             if ($password == $data->password) {
 

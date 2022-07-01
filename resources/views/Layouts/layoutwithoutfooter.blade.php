@@ -37,8 +37,13 @@
 
       <ul class="profile">
         <li class="nr_li dd_main">
-          <img onclick="" src="css/layout/profile.jpeg" alt="profile_img">
-
+          
+          @if(\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()==NULL)
+          <img src="Images/DummyImages/dummyProfileImage.png" alt="profile_img">
+          @endif
+          @if(\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()->profilePic!=NULL)
+            <img src="..\{{\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()->profilePic}}" alt="profile_img">
+          @endif
           <div class="dd_menu">
 
             <div class="dd_left">
@@ -71,13 +76,13 @@
       </ul>
       <ul class="ull">
         <li class="lii">
-          <a class="menuheader" href="allJobs">All Jobs</a>
+          <a class="menuheader" href="/allJobs">All Jobs</a>
         </li>
         <li class="lii">
-          <a class="menuheader" href="chat">chat</a>
+          <a class="menuheader" href="/chat">chat</a>
         </li>
         <li class="lii">
-          <a class="menuheader" href="login">Sign In</a>
+          <a class="menuheader" href="/login">Sign In</a>
         </li>
       </ul>
       <label class="label" id="icon">

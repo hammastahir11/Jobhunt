@@ -59,8 +59,12 @@
       @if(Session::get('userId')!=NULL)
       <ul class="profile">
         <li class="nr_li dd_main">
-          <img src="css/layout/profile.jpeg" alt="profile_img">
-
+          @if(\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()==NULL)
+          <img src="Images/DummyImages/dummyProfileImage.png" alt="profile_img">
+          @endif
+          @if(\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()->profilePic!=NULL)
+            <img src="..\{{\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()->profilePic}}" alt="profile_img">
+          @endif
           <div class="dd_menu">
 
             <div class="dd_left">
