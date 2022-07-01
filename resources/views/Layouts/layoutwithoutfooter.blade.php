@@ -46,7 +46,7 @@
             <img src="..\{{\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()->profilePic}}" alt="profile_img">
           @endif
 
-          <img src="css/layout/profile.jpeg" alt="profile_img">
+        
 
 
           <div class="dd_menu">
