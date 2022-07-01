@@ -23,7 +23,7 @@
 </head>
 
 <body class="antialiased">
-  <header>
+<header>
     <nav class="navi">
       <label>
         <a class="logo" style="text-decoration: none; 
@@ -34,10 +34,10 @@
                               line-height: 70px;" href="/">JOB HUNT</a>
       </label>
 
-
+      @if(Session::get('userId')!=NULL)
       <ul class="profile">
         <li class="nr_li dd_main">
-          <img onclick="" src="css/layout/profile.jpeg" alt="profile_img">
+          <img src="css/layout/profile.jpeg" alt="profile_img">
 
           <div class="dd_menu">
 
@@ -62,6 +62,7 @@
                 <li>
                   <a class="drop" href="/CreateJob">Create Jobs</a>
                 </li>
+
                 <li>
                   <a class="drop" href="/logout">Logout</a>
                 </li>
@@ -69,16 +70,23 @@
             </div>
           </div>
       </ul>
+      @endif
+
       <ul class="ull">
         <li class="lii">
-          <a class="menuheader" href="allJobs">All Jobs</a>
+          <a class="menuheader" href="/allJobs">All Jobs</a>
         </li>
         <li class="lii">
-          <a class="menuheader" href="chat">chat</a>
+          <a class="menuheader" href="/chat">chat</a>
         </li>
         <li class="lii">
-          <a class="menuheader" href="login">Sign In</a>
+          <a class="menuheader" href="/createcv">Create CV</a>
         </li>
+        @if(Session::get('userId')==NULL)
+        <li class="lii">
+          <a class="menuheader" href="/login">Sign In</a>
+        </li>
+        @endif
       </ul>
       <label class="label" id="icon">
         <i class="fa fa-bars"></i>
