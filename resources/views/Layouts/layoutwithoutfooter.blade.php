@@ -39,7 +39,7 @@
         <li class="nr_li dd_main">
 
           
-          @if(\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()==NULL)
+          @if(\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()->profilePic==NULL)
           <img src="Images/DummyImages/dummyProfileImage.png" alt="profile_img">
           @endif
           @if(\App\Models\userinfo::where('userId',Session::get('userId')->userId)->get()->first()->profilePic!=NULL)
