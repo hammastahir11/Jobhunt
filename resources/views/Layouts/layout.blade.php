@@ -105,6 +105,9 @@
         <li class="lii">
           <a class="menuheader" href="/chat">chat</a>
         </li>
+        <li class="lii">
+          <a class="menuheader" href="/createcv">Create CV</a>
+        </li>
         @if(Session::get('userId')==NULL)
         <li class="lii">
           <a class="menuheader" href="/login">Sign In</a>

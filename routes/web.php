@@ -46,9 +46,9 @@ Route::get('/userprofile', function () {
 Route::get(('login'), function () {
     return view('login');
 });
-// Route::get(('/editprofile'), function () {
-//     return view('createprofile');
-// });
+Route::get(('/createcv'), function () {
+    return view('CreateCV');
+});
 
 Route::get(('menu'), function () {
     return view('Layouts.layout');
@@ -59,7 +59,7 @@ Route::post('/register', 'App\Http\Controllers\RegisterUser@store');
 Route::post('/login', 'App\Http\Controllers\RegisterUser@LoginUser');
 Route::post('/saveProfile', 'App\Http\Controllers\RegisterUser@createProfile');
 Route::get('/viewProfile', 'App\Http\Controllers\RegisterUser@ViewProfile');
-
+Route::post('/createcv', 'App\Http\Controllers\cvmaker@createCV1');
 Route::get('/editprofile', 'App\Http\Controllers\RegisterUser@updateProfile');
 
 //ApplyJob
