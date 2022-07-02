@@ -11,6 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <script>
     $(document).ready(function(){
       $("#icon").click(function(){
@@ -69,9 +70,13 @@
 
             <div class="dd_left">
               <ul>
-                <li><i class="fas fa-cog"></i></li>
-                <li><i class="fas fa-download"></i></li>
-                <li><i class="fas fa-sign-out-alt"></i></li>
+                <li><i class="bi bi-arrow-right-square-fill"></i></i></li>
+                <li><i class="bi bi-view-stacked"></i></li>
+                <li><i class="bi bi-archive"></i></li>
+                <li><i class="bi bi-journals"></i></li>
+                <li><i class="bi bi-book-half"></i></li>
+                <br/>
+                <li><i class="bi bi-box-arrow-in-right"></i></li>
               </ul>
             </div>
             <div class="dd_right">
