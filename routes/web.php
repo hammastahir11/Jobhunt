@@ -108,6 +108,12 @@ Route::POST('/updateAdminDetails', 'App\Http\Controllers\adminController@updateD
 
 
 Route::POST('/saveExperience', 'App\Http\Controllers\userExperience@store');
+
+
+Route::POST('/SearchCandidates', 'App\Http\Controllers\Searching@searchbyjobtype');
+
+
+
 Route::get(('/experience'), function () {
     return view('addexperience');
 });
