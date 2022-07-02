@@ -111,7 +111,7 @@ class RegisterUser extends Controller
         Request::validate([
             'fName' => 'required|string|min:3|max:10',
             'lName' => 'required|string|min:3|max:10',
-            'emailId' => 'required|email|min:10|max:25|unique:users',
+            'emailId' => 'required|email|min:10|max:25',
             'password' => 'required|string|min:8|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
         ]);
         $user = new user_profile();
