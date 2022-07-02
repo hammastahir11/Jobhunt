@@ -72,6 +72,9 @@
                 <li>
                   <a class="drop" href="/CreateJob">Create Jobs</a>
                 </li>
+                <li>
+                  <a class="drop" href="/experience">Add Experience</a>
+                </li>
 
                 <li>
                   <a class="drop" href="/logout">Logout</a>

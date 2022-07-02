@@ -105,3 +105,11 @@ Route::get('/logout', 'App\Http\Controllers\userControl@logout');
 //AdminPannel Header and footer data
 Route::POST('/saveAdminInfo', 'App\Http\Controllers\adminController@saveDetails');
 Route::POST('/updateAdminDetails', 'App\Http\Controllers\adminController@updateDetails');
+
+
+Route::POST('/saveExperience', 'App\Http\Controllers\userExperience@store');
+Route::get(('/experience'), function () {
+    return view('addexperience');
+});
+
+
