@@ -38,8 +38,8 @@
                     @endisset
 
                     @csrf
-                    <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' required>
-                    <input type='text' name="password" class='input-field' placeholder='Enter Password' required>
+                    <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' >
+                    <input type='text' name="password" class='input-field' placeholder='Enter Password' >
 
                     <button type='submit' onclick="CheckPassword(document.form1.text1)" class='submit-btn'> Log in
                     </button>
