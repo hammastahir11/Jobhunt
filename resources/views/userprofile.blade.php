@@ -40,6 +40,8 @@
             </div>
             </section>
 
+           
+
             <section class="work_skills card">
                 <div class="work">
                     <h1 class="heading">About</h1>
@@ -53,41 +55,31 @@
                 </div>
 
                 <div class="work">
+                    @php
+                        
+                        $data=\App\Models\experience::where('userId',Session::get('userId')->userId)->get();
+                    @endphp
+                    
                     <h1 class="heading">Work</h1>
-                    <div class="primary">
-                        <h1>@if($userData!=NULL){{$userData->jobname}}@endif </h1>
-                        <span>Secondary</span>
-                        <p>@if($userData!=NULL){{$userData->jobdesc}}@endif</p>
-                        <p>@if($userData!=NULL){{$userData->address}}@endif</p>
 
+                    @foreach($data as $dt)
+                    <div class="primary">
+                        <h1>@if($dt!=NULL){{$dt->jobname}}@endif </h1>
+                        {{-- <span>Secondary</span> --}}
+                        <p>@if($dt!=NULL){!!$dt->jobdesc!!}@endif</p>
+                        <p>@if($dt!=NULL){{$dt->address}}@endif</p>
 
                     </div>
-                    @if($userData->jobname2 != null)
-                        <div class="secondary">
-                            <h1>@if($userData!=NULL){{$userData->jobname2}}@endif </h1>
-                            <span>Secondary</span>
-                            <p>@if($userData!=NULL){{$userData->jobdesc2}}@endif</p>
-                            <p>@if($userData!=NULL){{$userData->address2}}@endif</p>
-                        </div>
-                        @if($userData->jobname3 != null)
-                        <div class="secondary">
-                            <h1>@if($userData!=NULL){{$userData->jobname3}}@endif </h1>
-                            <span>Secondary</span>
-                            <p>@if($userData!=NULL){{$userData->jobdesc3}}@endif</p>
-                            <p>@if($userData!=NULL){{$userData->address3}}@endif</p>
-                        </div>
-                        @endif
-                    @endif
+                    @endforeach
+                   
                 </div>
 
                 <!-- ===== ===== Skills Contaienr ===== ===== -->
                 <div class="skills">
                     <h1 class="heading">Skills</h1>
                     <ul>
-                        <li style="--i:0">Android</li>
-                        <li style="--i:1">Web-Design</li>
-                        <li style="--i:2">UI/UX</li>
-                        <li style="--i:3">Video Editing</li>
+                        <li style="--i:0">{{$userData->profession}}</li>
+                        
                     </ul>
                 </div>
             </section>
