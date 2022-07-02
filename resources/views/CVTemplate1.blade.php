@@ -64,53 +64,61 @@
               <ul>
                 <li>
                   <div class="skill_name">
-                    HTML
+                    {{$cvdata->skillname}}
                   </div>
                   <div class="skill_progress">
                     <span style="width: 80%;"></span>
                   </div>
-                  <div class="skill_per">80%</div>
+                  <div class="skill_per">{{$cvdata->percentage}}%</div>
                 </li>
+                @if($cvdata->skillname2 != null)
                 <li>
-
-                  
                   <div class="skill_name">
-                    CSS
+                  {{$cvdata->skillname2}}
                   </div>
                   <div class="skill_progress">
                     <span style="width: 70%;"></span>
                   </div>
-                  <div class="skill_per">70%</div>
+                  <div class="skill_per">{{$cvdata->percentage2}}%</div>
                 </li>
+                @if($cvdata->skillname3 != null)
                 <li>
                   <div class="skill_name">
-                    SASS
+                  {{$cvdata->skillname3}}
                   </div>
                   <div class="skill_progress">
                     <span style="width: 90%;"></span>
                   </div>
-                  <div class="skill_per">90%</div>
+                  <div class="skill_per">{{$cvdata->percentage3}}%</div>
                 </li>
+                @if($cvdata->skillname4 != null)
                 <li>
                   <div class="skill_name">
-                    JS
+                  {{$cvdata->skillname4}}
                   </div>
                   <div class="skill_progress">
                     <span style="width: 60%;"></span>
                   </div>
-                  <div class="skill_per">60%</div>
+                  <div class="skill_per">{{$cvdata->percentage4}}%</div>
                 </li>
+                @if($cvdata->skillname5 != null)
                 <li>
                   <div class="skill_name">
-                    JQUERY
+                  {{$cvdata->skillname5}}
                   </div>
                   <div class="skill_progress">
                     <span style="width: 88%;"></span>
                   </div>
-                  <div class="skill_per">88%</div>
+                  <div class="skill_per">{{$cvdata->percentage5}}%</div>
                 </li>
+                @endif
+                @endif
+                @endif
+                @endif
               </ul>
             </div>
+
+
             <div class="resume_item resume_social">
               <div class="title">
                 <p class="bold">Social</p>
