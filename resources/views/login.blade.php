@@ -47,6 +47,10 @@
                     <br/>
                  
                     <button type='submit' class='submit-btn'> Log in
+                    <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' >
+                    <input type='text' name="password" class='input-field' placeholder='Enter Password' >
+
+                    <button type='submit' onclick="CheckPassword(document.form1.text1)" class='submit-btn'> Log in
                     </button>
                 </form>
                 <form id='register' action="/register" enctype="multipart/form-data" method="POST" name="form1"

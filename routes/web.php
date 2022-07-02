@@ -21,6 +21,9 @@ Route::get('/', 'App\Http\Controllers\createJobs@index');
 Route::get('/home', function () {
     return view('index');
 });
+Route::get('/AdminPannelview', function () {
+    return view('AdminPannel');
+});
 Route::get('/candidates', function () {
     return view('CandidatePage');
 });
@@ -97,3 +100,8 @@ Route::get('/downloadImage/{userId}', 'App\Http\Controllers\specificUserJobData@
 
 //LOGOUT
 Route::get('/logout', 'App\Http\Controllers\userControl@logout');
+
+
+//AdminPannel Header and footer data
+Route::POST('/saveAdminInfo', 'App\Http\Controllers\adminController@saveDetails');
+Route::POST('/updateAdminDetails', 'App\Http\Controllers\adminController@updateDetails');

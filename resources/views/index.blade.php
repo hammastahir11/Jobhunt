@@ -202,11 +202,15 @@
           </div> --}}
         </div>
 
+        @php
+        $data=\App\Models\WebPersonalData::where('id',1)->get()->first();
+        @endphp
+
         <!--Right side just some pics-->
         <div class="col-4 p-4">
-          <img src="css/index/bgHomeImage.jpg" class="w-100 py-1" alt="" />
-          <img src="css/index/bgHomeImage.jpg" class="w-100 py-1" alt="" />
-          <img src="css/index/bgHomeImage.jpg" class="w-100 py-1" alt="" />
+          <img src="{{$data->img1}}" class="w-100 py-1" alt="" />
+          <img src="{{$data->img2}}" class="w-100 py-1" alt="" />
+          <img src="{{$data->img3}}" class="w-100 py-1" alt="" />
         </div>
       </div>
 
