@@ -27,7 +27,7 @@
                     <button type='button' onclick='register()' class='toggle-btn'>Register</button>
                 </div>
 
-                <form id='login' action="/login" enctype="multipart/form-data" method="POST" name="form1"
+                <form id='login' action="/login" enctype="multipart/form-data" method="POST" 
                     class='input-group-login'>
 
                     @isset($error)
@@ -38,23 +38,51 @@
                     @endisset
 
                     @csrf
+                    <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' required>
+                    <br/>
+                    <br/>
+                    <input type='text' name="password" class='input-field' placeholder='Enter Password' required>
+                    <br/>
+                    <br/>
+                    <br/>
+                 
+                    <button type='submit' class='submit-btn'> Log in
                     <input type='text' name="emailId" class='input-field' placeholder='Email/UserName' >
                     <input type='text' name="password" class='input-field' placeholder='Enter Password' >
 
                     <button type='submit' onclick="CheckPassword(document.form1.text1)" class='submit-btn'> Log in
                     </button>
                 </form>
-                <form id='register' action="/register" enctype="multipart/form-data" method="POST"
+                <form id='register' action="/register" enctype="multipart/form-data" method="POST" name="form1"
                     class='input-group-register'>
                     @csrf
-                    <input type='text' class='input-field' name='fName' placeholder='First Name' required>
-                    <input type='text' class='input-field' name='lName' placeholder='Last Name ' required>
                     
-                    <input type='email' class=' input-field' name='emailId' placeholder='Email Id' required>
-                    <input type='text' name='password' class='input-field' placeholder='Enter Password' required>
-                    <input type='password' name="text1" name='confirmPassword' class='input-field'
-                        placeholder='Confirm Password' required>
-                    <button type='submit' onclick="CheckPassword(document.form1.text1)"
+                    <input type='text' class='input-field form-control' name='fName' placeholder='First Name' >
+                    @error('fName')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
+                    
+                    <input type='text' class='input-field form-control' name='lName' placeholder='Last Name ' >
+                    @error('lName')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
+                    
+                    <input type='email' class=' input-field form-control' name='emailId' placeholder='Email Id' >
+                    @error('emailId')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
+                    
+                    <input type='text' name='password' class='input-field form-control' placeholder='Enter Password' >
+                    @error('password')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
+                    
+                    <input type='password' name="password" name='confirmPassword' class='input-field form-control' placeholder='Confirm Password' >
+                    @error('password')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
+                    <br/>
+                    <button type='submit' 
                         class='submit-btn'>Register</button>
                 </form>
             </div>

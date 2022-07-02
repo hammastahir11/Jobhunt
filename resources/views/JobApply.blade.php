@@ -34,10 +34,23 @@
                 <form action="/apply" enctype="multipart/form-data" method="POST">
                     @csrf
                     <input type="text" name="fname" placeholder="Full Name" class="w-50 border p-1 m-3 rounded">
+                    @error('fname')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
                     <input type="text" name="email" placeholder="Email" class="w-50 border p-1 m-3 rounded">
+                    @error('email')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
                     <input type="text" name="pNumber" placeholder="Phone Number" class="w-50 border p-1 m-3 rounded">
+                    @error('pNumber')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
                     <label for="Resume" class="w-50 border-0 p-1 m-3 rounded">Upload .pdf/.docx Resume file </label>
+                    
                     <input type="file" name="resume" id="Resume"  class="w-50 border p-1 m-3 rounded"><br>
+                    @error('resume')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
                     <button type="submit" class="btn bg-warning text-light">Apply</button>
                 </form>
             </div>

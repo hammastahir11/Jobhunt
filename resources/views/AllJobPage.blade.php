@@ -67,16 +67,20 @@
 
             <div class="col-lg-6 shadow-lg rounded border my-2">
                 <h6 style="color: #89ba16">Job Description</h6>
+                <br/>
                 @if (Session::get('userId') != null)
                 @if ($jobDes != null)
-                <a href="/jobapply" class="btn btn-primary ">apply</a>
+                <a href="/jobapply" class="btn btn-primary ">Apply</a><br/>
+                
                 @endif
                 @endif
+                <br/>
                 <div class="ScrollingJobs position-static">
                     @if ($jobDes != null)
                     <h2> {{ $jobDes->Title }}</h2>
-                    <i class="bi bi-bag-fill h6"> {{ $jobDes->WorkPlace }}</i><br>
-                    <i class="bi bi-building h6">{{ $jobDes->JobLocation }}</i>
+                    
+                    <i class="bi bi-bag-fill h6"> {{ $jobDes->WorkPlace }}</i><br><br/>
+                    <i class="bi bi-building h6">{{ $jobDes->JobLocation }}</i><br/>
                     <br>
 
                     <div>

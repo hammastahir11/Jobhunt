@@ -55,16 +55,29 @@
                 <div class="work">
                     <h1 class="heading">Work</h1>
                     <div class="primary">
-
-
-
-                    </div>
-
-                    <div class="secondary">
-                        <h1>Front-End Developer </h1>
+                        <h1>@if($userData!=NULL){{$userData->jobname}}@endif </h1>
                         <span>Secondary</span>
-                        <p>6th Street <br> Hostel City Islamabad</p>
+                        <p>@if($userData!=NULL){{$userData->jobdesc}}@endif</p>
+                        <p>@if($userData!=NULL){{$userData->address}}@endif</p>
+
+
                     </div>
+                    @if($userData->jobname2 != null)
+                        <div class="secondary">
+                            <h1>@if($userData!=NULL){{$userData->jobname2}}@endif </h1>
+                            <span>Secondary</span>
+                            <p>@if($userData!=NULL){{$userData->jobdesc2}}@endif</p>
+                            <p>@if($userData!=NULL){{$userData->address2}}@endif</p>
+                        </div>
+                        @if($userData->jobname3 != null)
+                        <div class="secondary">
+                            <h1>@if($userData!=NULL){{$userData->jobname3}}@endif </h1>
+                            <span>Secondary</span>
+                            <p>@if($userData!=NULL){{$userData->jobdesc3}}@endif</p>
+                            <p>@if($userData!=NULL){{$userData->address3}}@endif</p>
+                        </div>
+                        @endif
+                    @endif
                 </div>
 
                 <!-- ===== ===== Skills Contaienr ===== ===== -->
@@ -83,17 +96,17 @@
             <!-- ===== ===== User Details Sections ===== ===== -->
             <section class="userDetails card">
                 <div class="userName">
-                    <h1 class="name">@if($userData!=NULL){{$userData->fName}} &nbsp; {{$userData->lName}}@endif</h1>
-                    <div class="map">
-                        <i class="ri-map-pin-fill ri"></i>
-                        <span>@if($userData!=NULL){{$userData->city}}, &nbsp; {{$userData->country}}@endif</span>
+                    <h1 class="name">@if($userData!=NULL){{$userData->fName}}&nbsp;{{$userData->lName}}@endif</h1>
+                    <div class="map ">
+                    <i class="ri-map-pin-fill ri"></i>
+                        <span>  @if($userData!=NULL){{$userData->city}},&nbsp;{{$userData->country}}@endif</span>
                     </div>
                     <p>@if($userData!=NULL){{$userData->profession}}@endif</p>
                 </div>
 
                 <div class="rank">
                     <h1 class="heading">Ratings</h1>
-                    <span>8.6</span>
+                    <span>8.9</span>
                     <div class="rating">
                         <i class="ri-star-fill rate"></i>
                         <i class="ri-star-fill rate"></i>

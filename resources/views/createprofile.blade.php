@@ -23,7 +23,7 @@
             
             <li class="active">Personal Details</li>
             <li>Contact Infromation</li>
-            {{-- <li>Work Experience</li> --}}
+            <li>Work Experience</li> 
             
             
         </ul>
@@ -37,15 +37,28 @@
             <h3 class="fs-subtitle"></h3>
 
             <input type="text" name="field" placeholder="Field" value="{{$userData->profession}} " />
+            @error('field')
+                    <div class="alert-danger ">{{$message}}</div>
+            @enderror
             <select name="Gender" id="category" value="">
                 <option value="Male" <?=$userData->gender == 'Male' ? 'selected' : '';?>>Male</option>
                 <option value="Female" <?=$userData->gender == 'Female' ? 'selected' : '';?>> Female</option>
                 {{-- {{ $tabactive == 3 ? 'active' : '' }} --}}
                 <input type="text" onfocus="(this.type='date')" name="dob" value="{{$userData->dateOfBirth}}"
                     placeholder="Date Of Birth" />
+                    @error('dob')
+                    <div class="alert-danger ">{{$message}}</div>
+            @enderror
                 <input type="text" name="city" placeholder="City" value="{{$userData->city}}" />
+                @error('city')
+                    <div class="alert-danger ">{{$message}}</div>
+            @enderror
                 <input type="text" name="country" placeholder="Country" value="{{$userData->country}}" />
+                @error('country')
+                    <div class="alert-danger ">{{$message}}</div>
+            @enderror
                 <input type="button" name="next" class="next action-button" value="Next" />
+                
         </fieldset>
 
         <fieldset>
@@ -54,27 +67,68 @@
             <label for="formFile" class="form-label">Profile Image</label>
             
             <input  name="pic" type="file" value='{!!$userData->profilePic!!}' id="formFile">
-            <input type="text" name="phone" placeholder="Phone" value="{{$userData->phoneNumber}}" />
+            @error('pic')
+                    <div class="alert-danger ">{{$message}}</div>
+            @enderror
+            <input type="number" name="phone" placeholder="Phone" value="{{$userData->phoneNumber}}" />
+            @error('phone')
+                    <div class="alert-danger ">{{$message}}</div>
+            @enderror
             <input type="website" name="website" placeholder="Website" value="{{$userData->portfolioSite}}" />
+            @error('website')
+                    <div class="alert-danger ">{{$message}}</div>
+            @enderror
             <textarea name="personalInfo" placeholder="About You">{{$userData->aboutUser}}</textarea>
+            @error('personalInfo')
+                    <div class="alert-danger ">{{$message}}</div>
+            @enderror
             <input type="button" name="previous" class="previous action-button" value="Previous" />
 
-            <input type="submit" name="submit" class=" action-button" value="Submit" />
-            {{-- <input type="button" name="next" class="next action-button" value="Next" /> --}}
+            
+            <input type="button" name="next" class="next action-button" value="Next" /> 
         </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Work Experience</h2>
+            <h3 class="fs-subtitle">Experience 1</h3>
+            <div class="input_field_wrap" style= "height: 225px; overflow-y: auto;">
+                
+                <div><input type="text" name="jobname" placeholder="Job Name" /></div>
+                @error('jobname')
+                    <div class="alert-danger ">{{$message}}</div>
+                @enderror
+                <div><textarea name="jobdesc" placeholder="Job Description/Project Detail"></textarea></div>
+                @error('jobdesc')
+                    <div class="alert-danger ">{{$message}}</div>
+                @enderror
+                
+                <div><textarea name="address" placeholder="Address"></textarea></div>
+                @error('address')
+                    <div class="alert-danger ">{{$message}}</div>
+                @enderror
+
+                
+            </div>
+            <br>
+
+            <input type="button" class="add_field_button action-button" value="Add Experience" />
+            <br>
+
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="submit" name="submit" class=" action-button" value="Submit" />
+        </fieldset> 
         
         @endif
 
-        @if($userData==NULL)
+        <!-- @if($userData==NULL)
         <ul id="progressbar">
 
             <li class="active">Personal Details</li>
             <li>Contact Infromation</li>
-            {{-- <li>Work Experience</li> --}}
+            <li>Work Experience</li>
 
 
-        </ul>
-        <!-- fieldsets -->
+        </ul> -->
+        <!-- fieldsets
         <fieldset>
             <h2 class="fs-title">Personal Details</h2>
             <h3 class="fs-subtitle"></h3>
@@ -101,10 +155,10 @@
             <textarea name="personalInfo" placeholder="About You" value=""></textarea>
             <input type="button" name="previous" class="previous action-button" value="Previous" />
 
-            <input type="submit" name="submit" class=" action-button" value="Submit" />
-            {{-- <input type="button" name="next" class="next action-button" value="Next" /> --}}
+            
+            <input type="button" name="next" class="next action-button" value="Next" />
         </fieldset>
-        {{-- <fieldset>
+        <fieldset>
             <h2 class="fs-title">Work Experience</h2>
             <h3 class="fs-subtitle">Experience</h3>
             <div class="input_fields_wrap">
@@ -114,13 +168,14 @@
                 <div><textarea name="caddress" placeholder="Address"></textarea></div>
             </div>
             <br>
-            <!-- <button class="add_field_button">Add More Experience</button>  -->
+             <button class="add_field_button">Add More Experience</button>  
             <input type="button" class="add_field_button action-button" value="Add Experience" />
             <br>
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-        </fieldset> --}}
-        @endif
-    </form>
+        </fieldset> 
+        @endif-->
+    </form> 
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

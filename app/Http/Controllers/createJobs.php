@@ -13,6 +13,12 @@ class createJobs extends Controller
 {
     public function store()
     {
+        Request::validate([
+            'title' => 'required|string|min:3|max:20',
+            'company'=>'required|string|min:3|max:50',
+            'address'=>'required|string|min:10|max:100',
+            'editor'=>'required',
+        ]);
 
         $jobAdd = new postjob();
         $user = Session::get('userId');
