@@ -10,7 +10,12 @@
     <script src="css/createpeofile/javascript/createprofile.js" defer></script>
     <link rel="stylesheet" href="{{URL::asset('css/Createcv/createprofile.css')}}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <title>Create Profile</title>
+    <link rel="stylesheet" href=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity=
+"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <title>Create CV</title>
 </head>
 
 <body>
@@ -31,7 +36,7 @@
         <fieldset>
             <h2 class="fs-title">Basic Infromation</h2>
             <h3 class="fs-subtitle"></h3>
-            <div style= "height: 380px; overflow-y: scroll;">            
+            <div style= "height: 370px; overflow-y: scroll;">            
 
                 <input type="text" name="fname" placeholder="First Name" />
                 <input type="text" name="lname" placeholder="Last Name" />
@@ -49,15 +54,32 @@
         </fieldset>
 
         <fieldset>
+        
             <h2 class="fs-title">Social</h2>
             <h3 class="fs-subtitle"></h3>
-            <input type="text" name="facebook" placeholder="Facebook" />
-            <input type="text" name="twitter" placeholder="Twitter" />
-            <input type="text" name="github" placeholder="GitHub" />
-            <input type="text" name="linkedin" placeholder="Linkedin" />
+            <div style= "height: 310px; overflow-y: auto;">
+                <input type="text" name="facebook" placeholder="Facebook" />
+                <input type="text" name="twitter" placeholder="Twitter" />
+                <input type="text" name="github" placeholder="GitHub" />
+                <input type="text" name="linkedin" placeholder="Linkedin" />
+                <h2 class="fs-title">SKILL's</h2>
+                <h3 class="fs-subtitle">SKILL 1</h3> 
+                <div class=" input_field1_wrap">
+                <input type="text" name="skillname" placeholder="Skill Name" class="form-control input-sm" />
+                <input type="text" name="percentage" placeholder="SKills in %" class="form-control input-sm"/>
+                <!-- <input type='text' name="percentage" placeholder="SKills in %"class="form-control input-sm"/>
+                <input type='text' name="percentage" placeholder="SKills in %" class="form-control input-sm"/> -->
+                </div>
+                 
+
+            </div> 
+            <input type="button"  class="add_skill_button action-button" value="Add Skills" />
+            <br>
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <input type="button" name="next" class="next action-button" value="Next" />
+            <input type="button" name="next" class="next action-button" value="Next"  />
+      
         </fieldset>
+
 
         <fieldset>
             <h2 class="fs-title">Work Experience</h2>
@@ -83,7 +105,7 @@
         <fieldset>
             <h2 class="fs-title">Education</h2>
             <h3 class="fs-subtitle"></h3>
-            <div class="input_fields_wrap" class="input_fields_wrap" style= "height: 275px; overflow-y: auto;">
+            <div class="input_fields_wrap" style= "height: 275px; overflow-y: auto;">
                 <h3 class="fs-subtitle"></h3>
                 <div><input type="text" name="instname" placeholder="Institution Name" /></div>
                 <div><textarea name="coursedesc" placeholder="Courses Description/Courses Detail"></textarea></div>

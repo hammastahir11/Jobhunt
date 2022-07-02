@@ -112,3 +112,26 @@ $(document).ready(function () {
     e.preventDefault(); $(this).parent('div').remove(); x--;
   })
 });
+
+
+
+//Percentage
+
+$(document).ready(function () {
+  var max_fields = 5; //maximum input boxes allowed
+  var wrapper = $(".input_field1_wrap"); //Fields wrapper
+  var add_button = $(".add_skill_button"); //Add button ID
+
+  var x = 1; //initlal text box count
+  $(add_button).click(function (e) { //on add input button click
+    e.preventDefault();
+    if (x < max_fields) { //max input box allowed
+      x++; //text box increment
+      $(wrapper).append('<div > <h3 class="fs-subtitle"><br/>SKILL '+x+'</h3> <input type="text" name="skillname'+x+'" placeholder="Skill Name" class="form-control input-sm" />  <input type="text" name="percentage'+x+'" placeholder="SKills in %" class="form-control input-sm" /> <a href="#" class="remove_field">Remove</a> </div>'); //add input box
+    }
+  });
+
+  $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+    e.preventDefault(); $(this).parent('div').remove(); x--;
+  })
+});
