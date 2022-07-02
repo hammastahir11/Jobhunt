@@ -157,6 +157,9 @@
       <!-- Right -->
     </section>
     <!-- Section: Social media -->
+    @php
+    $data=\App\Models\WebPersonalData::where('id',1)->get()->first();
+    @endphp
 
     <!-- Section: Links  -->
     <section class="">
@@ -170,8 +173,7 @@
               <i class="fas fa-gem me-3"></i>S K I L L H U N T
             </h6>
             <p>
-              Skill Hunt is a Plateform, where you can find out a job. You Can Post a job. Or if you want to find out
-              the candidate for any post. You can also do that here
+              {{$data->Description}}
             </p>
           </div>
           <!-- Grid column -->
@@ -224,13 +226,13 @@
             <h6 class="text-uppercase fw-bold mb-4">
               Contact
             </h6>
-            <p><i class="fas fa-home me-3"></i> Comsats University Islamabad</p>
+            <p><i class="fas fa-home me-3"></i> {{$data->address}}</p>
             <p>
               <i class="fas fa-envelope me-3"></i>
-              localpurposes@gmail.com
+              {{$data->email}}
             </p>
-            <p><i class="fas fa-phone me-3"></i> +92 3075174602</p>
-            <p><i class="fas fa-print me-3"></i> +51 1252521555</p>
+            <p><i class="fas fa-phone me-3"></i> {{$data->mobileNumber}}</p>
+            <p><i class="fas fa-print me-3"></i>{{$data->phoneNumber}}</p>
           </div>
           <!-- Grid column -->
         </div>
