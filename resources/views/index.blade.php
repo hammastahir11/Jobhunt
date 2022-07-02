@@ -86,17 +86,45 @@
         <form action="/Search" method="POST">
           @csrf
           <input type="text" name="SearchField" id="SearchBox" class="shadow rounded workSearch"
-            placeholder="   i:e Graphic Designer" />
+            placeholder="Ahmad.." />
 
           <button type="submit" id="SearchCandidate" class="btnset shadow rounded">
             Search Candidate
-          </button>
+          </button><br><br>
+
+          
+
 
           {{-- <button type="submit" class="btnset shadow rounded">
             &nbsp;&nbsp;&nbsp;Search Job&nbsp; &nbsp;&nbsp;
           </button> --}}
 
         </form>
+
+        <div>
+
+          <form action="/SearchCandidates" method="POST" enctype="multipart/form-data">
+            @csrf
+  
+            @php
+              $professions=\App\Models\userinfo::distinct()->get(['profession']);;
+              
+            @endphp
+              
+              <select name="Category" class="shadow rounded workSearch" id="category">
+                @foreach($professions as $prof)
+                  
+                
+                  <option value="{{$prof->profession}}">{{$prof->profession}}</option>
+                  @endforeach
+                      
+              </select>
+  
+            <button type="submit" id="SearchCandidate" class="btnset shadow rounded">
+              Search Candidate
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

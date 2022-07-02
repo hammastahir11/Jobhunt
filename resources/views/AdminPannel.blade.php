@@ -33,7 +33,7 @@
         <a href="AdminPannel.html" class="active">Website footer</a>
 
 
-        <a href="CreatePost.html">Post</a>
+        <a href="CreatePost.html">Later Added More</a>
 
 
     </div>

@@ -12,10 +12,6 @@ class Searching extends Controller
     {
         $searchData = Request::input('SearchField');
 
-        // $off=DB::table('user_profiles')->join('applyjobs','user_profiles.userId','=','applyjobs.userId')
-        // ->join('postjobs','postjobs.postId','=','applyjobs.postId')->where('postjobs.userId',$id)
-        // ->select('user_profiles.fName','applyjobs.applyId','applyjobs.postId','user_profiles.lName','postjobs.JobDescription','user_profiles.userId','user_profiles.emailId','postjobs.Title')->get();
-
         $candidates = DB::table('user_profiles')->join('userinfo', 'userinfo.userId', '=', 'user_profiles.userId')->where('user_profiles.fName', $searchData)->get();
 
         return view('CandidatePage', ['candidates' => $candidates]);
@@ -29,5 +25,15 @@ class Searching extends Controller
         //return $candidate;
         
         return view('userprofile', ['userData' => $candidate]);
+    }
+
+
+    public function searchbyjobtype(){
+       
+        $category=Request::input('Category');
+       
+        $candidates = DB::table('user_profiles')->join('userinfo', 'userinfo.userId', '=', 'user_profiles.userId')->where('userinfo.profession', $category)->get();
+      
+        return view('CandidatePage', ['candidates' => $candidates]);
     }
 }
