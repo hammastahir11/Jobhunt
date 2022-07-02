@@ -57,7 +57,7 @@
                 <div class="work">
                     @php
                         
-                        $data=\App\Models\experience::where('userId',Session::get('userId')->userId)->get();
+                        $data=\App\Models\experience::where('userId',$userData->userId)->get();
                     @endphp
                     
                     <h1 class="heading">Work</h1>
