@@ -9,6 +9,8 @@ use App\Models\user_profile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Request;
+use Validator;
+
 
 use Session;
 
@@ -35,6 +37,17 @@ class RegisterUser extends Controller
     public function createProfile(Request $request)
     {
         
+        Request::validate([
+            'field' => 'required|string|min:3|max:20',
+            'dob'=>'required|date',
+            'city'=>'required|string|min:3|max:15',
+            'country'=>'required|string|min:3|max:15',
+            'phone'=>'required|digits:11',
+            'website'=>'required',
+            'pic'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'personalInfo'=>'required',
+
+        ]);
         $id = Session::get('userId')->userId;
         $givenData = DB::table('userinfo')->where('userinfo.userId', $id)->get()->first();
 
@@ -94,7 +107,13 @@ class RegisterUser extends Controller
     //Register a new User on Job Hunt
     public function store()
     {
-
+        
+        Request::validate([
+            'fName' => 'required|string|min:3|max:10',
+            'lName' => 'required|string|min:3|max:10',
+            'emailId' => 'required|email|min:10|max:25|unique:users',
+            'password' => 'required|string|min:8|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
+        ]);
         $user = new user_profile();
         $user->fName = Request::input('fName');
         $user->lName = Request::input('lName');

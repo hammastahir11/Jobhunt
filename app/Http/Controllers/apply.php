@@ -11,7 +11,12 @@ class apply extends Controller
 {
     public function store()
     {
-
+        Request::validate([
+            'fname'=>'required|string|min:3|max:20',
+            'email' => 'required|email|min:10|max:25|unique:users',
+            'pNumber'=>'required|digits:11',
+            'resume'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
         $apply = new applyjob();
 
         $apply->userId = Session::get('userId')->userId;

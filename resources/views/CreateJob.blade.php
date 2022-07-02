@@ -27,8 +27,14 @@
                     @csrf
                     <label for="title" class="py-2">Job Title</label><br>
                     <input type="text" name="title" class="rounded border w-100 p-2" placeholder="Job Title">
+                    @error('title')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
                     <label for="Company" class="py-2">Company</label><br>
                     <input type="text" name="company" class="rounded border w-100 p-2" placeholder="Company">
+                    @error('company')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
 
                     <label for="Workplace" class="py-2">Work Place</label><br>
                     <select name="workPlace" class="rounded border w-100 p-2" id="workPlace">
@@ -49,6 +55,9 @@
 
                     <label for="location" class="py-2">Job Location</label><br>
                     <input type="text" name="address" class="rounded border w-100 p-2" placeholder="Address">
+                    @error('address')
+                    <div class="alert-danger ">{{$message}}</div>
+                    @enderror
 
                     <label for="Employmenttype" class="py-2">Employment Type</label><br>
                     <select name="jobType" class="rounded border w-100 p-2" id="Employmenttype">
@@ -61,6 +70,9 @@
                     <label for="description" class="py-2">Description</label><br>
                     <div class="text-dark">
                         <textarea name="editor" id="editor" rows="10" class="w-100"></textarea>
+                        @error('editor')
+                        <div class="alert-danger ">{{$message}}</div>
+                         @enderror
 
                     </div>
 
