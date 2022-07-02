@@ -86,13 +86,10 @@
         <li class="lii">
           <a class="menuheader" href="/allJobs">All Jobs</a>
         </li>
-        <li class="lii">
+        {{-- <li class="lii">
           <a class="menuheader" href="/chat">chat</a>
-        </li>
-        <li class="lii">
-
-          <a class="menuheader" href="/login">Sign In</a>
-        </li>
+        </li> --}}
+        
         <li class="lii">
           <a class="menuheader" href="/createcv">Create CV</a>
 

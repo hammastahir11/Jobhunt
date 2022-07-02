@@ -102,9 +102,9 @@
         <li class="lii">
           <a class="menuheader" href="/allJobs">All Jobs</a>
         </li>
-        <li class="lii">
+        {{-- <li class="lii">
           <a class="menuheader" href="/chat">chat</a>
-        </li>
+        </li> --}}
         <li class="lii">
           <a class="menuheader" href="/createcv">Create CV</a>
         </li>
@@ -113,6 +113,7 @@
           <a class="menuheader" href="/login">Sign In</a>
         </li>
         @endif
+        
       </ul>
       <label class="label" id="icon">
         <i class="fa fa-bars"></i>
