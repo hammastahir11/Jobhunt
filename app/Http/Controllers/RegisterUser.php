@@ -108,12 +108,12 @@ class RegisterUser extends Controller
     public function store()
     {
         
-        Request::validate([
-            'fName' => 'required|string|min:3|max:10',
-            'lName' => 'required|string|min:3|max:10',
-            'emailId' => 'required|email|min:10|max:25',
-            'password' => 'required|string|min:8|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
-        ]);
+        // Request::validate([
+        //     'fName' => 'required|string|min:3|max:10',
+        //     'lName' => 'required|string|min:3|max:10',
+        //     'emailId' => 'required|email|min:10|max:25',
+        //     'password' => 'required|string|min:8|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/',
+        // ]);
         $user = new user_profile();
         $user->fName = Request::input('fName');
         $user->lName = Request::input('lName');
